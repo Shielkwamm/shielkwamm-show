@@ -5,4 +5,29 @@ body {
   font-family: Tahoma, sans-serif;
   line-height: 1.6;
   font-size: 18px;
+  background-image: url("/bg.png");
+  background-position-x: 0;
+  animation: bgAnimate 1000s linear infinite;
+}
+iframe {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes bgAnimate {
+  from {background-position-x: 10000px;}
+  to {background-position-x: 0px;}
+}
+
+.offline {
+  color: #828282
+}
+.error {
+  color: #DA291C
+}
+.online {
+  color: #5fdba7;
 }
