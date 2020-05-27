@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"Ship_atlas_", frames: [[0,0,166,105]]}
+		{name:"Ship_atlas_", frames: [[0,0,166,105],[168,0,20,37],[190,0,20,37],[212,0,20,37],[234,0,20,37]]}
 ];
 
 
@@ -11,41 +11,69 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_1 = function() {
+(lib.CachedBmp_48 = function() {
 	this.initialize(ss["Ship_atlas_"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
-// helper functions:
 
-function mc_symbol_clone() {
-	var clone = this._cloneProps(new this.constructor(this.mode, this.startPosition, this.loop));
-	clone.gotoAndStop(this.currentFrame);
-	clone.paused = this.paused;
-	clone.framerate = this.framerate;
-	return clone;
-}
 
-function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
-	var prototype = cjs.extend(symbol, cjs.MovieClip);
-	prototype.clone = mc_symbol_clone;
-	prototype.nominalBounds = nominalBounds;
-	prototype.frameBounds = frameBounds;
-	return prototype;
-	}
+
+(lib.CachedBmp_52 = function() {
+	this.initialize(ss["Ship_atlas_"]);
+	this.gotoAndStop(1);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_51 = function() {
+	this.initialize(ss["Ship_atlas_"]);
+	this.gotoAndStop(2);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_50 = function() {
+	this.initialize(ss["Ship_atlas_"]);
+	this.gotoAndStop(3);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_49 = function() {
+	this.initialize(ss["Ship_atlas_"]);
+	this.gotoAndStop(4);
+}).prototype = p = new cjs.Sprite();
+
 
 
 (lib.Symbol2 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
-	// Layer_1
-	this.instance = new lib.CachedBmp_1();
-	this.instance.setTransform(-0.1,-4,0.5,0.5);
+	// Layer_2
+	this.instance = new lib.CachedBmp_50();
+	this.instance.setTransform(-9.35,30.3,0.5,0.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+	this.instance_1 = new lib.CachedBmp_49();
+	this.instance_1.setTransform(-10.3,-3.95,0.5,0.5);
+
+	this.instance_2 = new lib.CachedBmp_52();
+	this.instance_2.setTransform(-11.85,30.3,0.5,0.5);
+
+	this.instance_3 = new lib.CachedBmp_51();
+	this.instance_3.setTransform(-12.8,-3.95,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).to({state:[{t:this.instance_3},{t:this.instance_2}]},4).wait(5));
+
+	// Layer_1
+	this.instance_4 = new lib.CachedBmp_48();
+	this.instance_4.setTransform(-0.1,-4,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(9));
 
 	this._renderFirstFrame();
 
-}).prototype = getMCSymbolPrototype(lib.Symbol2, new cjs.Rectangle(-0.1,-4,83,52.5), null);
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-12.8,-4,95.7,52.8);
 
 
 (lib.ship = function(mode,startPosition,loop) {
@@ -60,7 +88,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-0.1,-4,83,58.5);
+p.nominalBounds = new cjs.Rectangle(-10.3,-4,93.2,58.8);
 
 
 // stage content:
@@ -69,24 +97,24 @@ p.nominalBounds = new cjs.Rectangle(-0.1,-4,83,58.5);
 
 	// Layer_1
 	this.instance = new lib.ship();
-	this.instance.setTransform(41.5,38.4,1,1,0,0,0,41.5,22.4);
+	this.instance.setTransform(56.5,50.4,1,1,0,0,0,41.5,22.4);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(41.4,49.5,41.50000000000001,15);
+p.nominalBounds = new cjs.Rectangle(54.7,74,43.2,2.799999999999997);
 // library properties:
 lib.properties = {
 	id: '6056416E0CD78B4FBFEFFB7B675DA805',
-	width: 83,
-	height: 75,
+	width: 100,
+	height: 100,
 	fps: 24,
 	color: "#FFFFFF",
 	opacity: 0.00,
 	manifest: [
-		{src:"images/Ship_atlas_.png", id:"Ship_atlas_"}
+		{src:"images/Ship_atlas_.png?1590559631165", id:"Ship_atlas_"}
 	],
 	preloads: []
 };
