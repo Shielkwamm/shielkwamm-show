@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { GetStaticProps } from 'next'
 import styles from './index.module.css'
 import { useState } from 'react'
+import classNames from 'classnames'
 
 export default function Home () {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
@@ -58,26 +58,33 @@ export default function Home () {
   ]
   let messageIndex = 0;
   const setBurgerMessage = () => {
-    document.querySelector("#burger-phone").contentWindow.stage.children[0].messageBubble.textbox_mc.textbox.text = burgerMessages[messageIndex].message;
+    //document.querySelector("#burger-phone").contentWindow.stage.children[0].messageBubble.textbox_mc.textbox.text = burgerMessages[messageIndex].message;
     messageIndex++;
   }
   const burgerPhone = e => {
     if(!isBurgerOpen) {
       setBurgerMessage();
       setIsBurgerOpen(true);
-      document.querySelector("#burger-phone").contentWindow.stage.children[0].messageBubble.gotoAndPlay("bubbleOpen");
+      document.querySelector("#burger-phone").contentWindow.stage.children[0].actor.play();
+      document.querySelector("#burger-message").contentWindow.stage.children[0].message.gotoAndPlay("bubbleOpen");
+      //document.querySelector("#burger-message").contentWindow.stage.children[0].messageBubble.
     }
     else if(messageIndex < burgerMessages.length) {
       setBurgerMessage();
     }
     else {
       setIsBurgerOpen(false);
-      document.querySelector("#burger-phone").contentWindow.stage.children[0].messageBubble.gotoAndPlay("bubbleClose");
+      //document.querySelector("#burger-phone").contentWindow.stage.children[0].messageBubble.gotoAndPlay("bubbleClose");
       messageIndex = 0;
     }
   }
   return (
     <>
+      <Head>
+        <title>=== Shïelielïelïelielïelïelielïelkwammk ===</title>
+        <link rel="icon" href="/favicon_io/favicon.ico" />
+      </Head>
+
       <div className={styles.percent20}>
         <div className={styles.status}>
           <p><span className="offline">offline</span> Arbitrat0r</p>
@@ -85,10 +92,13 @@ export default function Home () {
           <p><span className="online">online</span> chatb0t</p>
           <p><span className="error">hiding</span> shoxxii</p>
         </div>
+        <div className={classNames('flex', 'mb-4', styles.viewScreen)}>
+          <iframe className={classNames('w-1/4', 'sm:w-1/4', 'md:w-1/3', 'lg:w-1/5', styles.messages)} id="burger-phone" src='/Slipurrrrss/Slipurrrrss.html'></iframe>
+          <iframe className={classNames('w-3/4', 'sm:w-3/4', 'md:w-2/3', 'lg:w-4/5', styles.messages)} id="burger-message" src='/McMessages/McMessages.html'></iframe>
+        </div>
         <iframe className={styles.ship} src='/Ship/Ship.html'></iframe>
         <iframe className={styles.sheilkwamm} src='/Shielkwamm/Shielkwamm.html'></iframe>
         <div onClick={burgerPhone} className={styles.burgerPhone}>🍔</div>
-        <iframe id="burger-phone" className={styles.messages} src='/Slipurrrrss/Slipurrrrs.html'></iframe>
       </div>
     </>
   )
