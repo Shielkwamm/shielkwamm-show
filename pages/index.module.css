@@ -4,11 +4,6 @@
   flex-direction: column;
   height: 100vh;
 }
-.messages {
-  left: 10px;
-  top: 0;
-  height: 250px;
-}
 .ship {
   position: fixed;
   top: 45%;
@@ -19,27 +14,4 @@
   position: fixed;
   right: 5px;
   bottom: 0;
-}
-.sheilkwamm {
-  position: fixed;
-  left: 0;
-  bottom: 5px;
-  width: 75px;
-  height: 75px;
-}
-.burgerPhone {
-  position: fixed;
-  left: 85px;
-  bottom: 3px;
-  font-size: 45px;
-  cursor: grab;
-}
-.burgerMessage {
-  position: fixed;
-
-}
-.viewScreen {
-  position: fixed;
-  width: 100%;
-  top: 0;
 }
