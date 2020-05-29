@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"McMessages_atlas_", frames: [[0,0,536,225],[0,227,403,83]]}
+		{name:"McNext_atlas_", frames: [[0,0,49,32]]}
 ];
 
 
@@ -11,16 +11,9 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_2 = function() {
-	this.initialize(ss["McMessages_atlas_"]);
+(lib.CachedBmp_28 = function() {
+	this.initialize(ss["McNext_atlas_"]);
 	this.gotoAndStop(0);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.CachedBmp_1 = function() {
-	this.initialize(ss["McMessages_atlas_"]);
-	this.gotoAndStop(1);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
 
@@ -41,154 +34,59 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	}
 
 
-(lib.textbox3 = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// Layer_1
-	this.textbox = new cjs.Text("1:53 AM Slipurrrrs: ||〠 [sic] *hic* [sic], I think we should break up...", "12px 'Tahoma'");
-	this.textbox.name = "textbox";
-	this.textbox.lineHeight = 17;
-	this.textbox.lineWidth = 191;
-	this.textbox.parent = this;
-	this.textbox.setTransform(2,2);
-
-	this.timeline.addTween(cjs.Tween.get(this.textbox).wait(1));
-
-	this._renderFirstFrame();
-
-}).prototype = getMCSymbolPrototype(lib.textbox3, new cjs.Rectangle(0,0,195.2,35.4), null);
-
-
-(lib.Symbol5 = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// Layer_1
-	this.instance = new lib.CachedBmp_2();
-	this.instance.setTransform(161.5,-18.55,0.5,0.5);
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
-
-	this._renderFirstFrame();
-
-}).prototype = getMCSymbolPrototype(lib.Symbol5, new cjs.Rectangle(161.5,-18.5,268,112.5), null);
-
-
 (lib.Symbol1 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
 	// Layer_1
-	this.instance = new lib.CachedBmp_1();
-	this.instance.setTransform(7.75,0,0.5,0.5);
+	this.instance = new lib.CachedBmp_28();
+	this.instance.setTransform(0,0,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
 	this._renderFirstFrame();
 
-}).prototype = getMCSymbolPrototype(lib.Symbol1, new cjs.Rectangle(7.8,0,201.5,41.5), null);
+}).prototype = getMCSymbolPrototype(lib.Symbol1, new cjs.Rectangle(0,0,24.5,16), null);
 
 
-(lib.Symbol2 = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// Layer_1
-	this.instance = new lib.Symbol5();
-	this.instance.setTransform(103.95,64.3,0.7689,0.4337,-1.2256,0,0,295.1,124.7);
-	this.instance.alpha = 0.7891;
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
-
-	this._renderFirstFrame();
-
-}).prototype = getMCSymbolPrototype(lib.Symbol2, new cjs.Rectangle(0,0,207,53.2), null);
-
-
-(lib.messageBg = function(mode,startPosition,loop) {
+(lib.Next = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
 	// Layer_1
 	this.instance = new lib.Symbol1();
-	this.instance.setTransform(104.7,25.3,1,1,0,0,0,104.7,20.7);
+	this.instance.setTransform(14.85,7,1,1,0,0,0,12.3,8);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(7));
-
-	// Layer_2
-	this.instance_1 = new lib.Symbol2();
-	this.instance_1.setTransform(110.2,32.1,1,1,0,0,0,103.5,32.1);
-
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(3).to({rotation:-1.2258,y:32.15},0).wait(4));
+	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:34.85},6).wait(3));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(6.1,-2.1,208,57.5);
-
-
-(lib.speech = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{intro:1,exit:16});
-
-	// timeline functions:
-	this.frame_0 = function() {
-		this.stop();
-		this.hasFinished = function() {
-			alert("mcDid you forget to assign a function? Did you not drill your props?");
-		}
-	}
-	this.frame_15 = function() {
-		this.stop();
-	}
-	this.frame_21 = function() {
-		this.stop();
-		this.hasFinished();
-	}
-
-	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(15).call(this.frame_15).wait(6).call(this.frame_21).wait(1));
-
-	// text
-	this.textbox_mc = new lib.textbox3();
-	this.textbox_mc.setTransform(102.4,21.2,1,1,0,0,0,97.6,17.7);
-	this.textbox_mc.alpha = 0;
-
-	this.timeline.addTween(cjs.Tween.get(this.textbox_mc).wait(9).to({alpha:1},6).wait(1).to({alpha:0},5).wait(1));
-
-	// Layer_3
-	this.instance = new lib.messageBg();
-	this.instance.setTransform(-5.05,29.15,0.0147,0.1489,0,0,0,105.2,32.3);
-	this.instance.alpha = 0;
-	this.instance._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).to({regX:106.8,regY:32.1,scaleX:1,scaleY:1,x:100.7,y:29.05,alpha:1},8,cjs.Ease.quintOut).wait(7).to({alpha:0},5).wait(1));
-
-	this._renderFirstFrame();
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-6.5,-3.1,215.7,53.300000000000004);
+p.nominalBounds = new cjs.Rectangle(2.6,-1,44.5,16);
 
 
 // stage content:
-(lib.McMessages = function(mode,startPosition,loop) {
+(lib.McNext = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
 	// Layer_1
-	this.talk = new lib.speech();
-	this.talk.setTransform(0.1,31.5);
+	this.plusplus = new lib.Next();
+	this.plusplus.setTransform(23.1,21.25,1,1,0,0,0,23.9,15.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.talk).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.plusplus).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(108.4,85,91.69999999999999,-14.599999999999994);
+p.nominalBounds = new cjs.Rectangle(26.8,17.3,-0.5,3.5);
 // library properties:
 lib.properties = {
-	id: '8FE286A2761EC44CA32E85E27A8E4C8F',
-	width: 207,
-	height: 100,
+	id: 'F0BBE2FF7087F9499AE94D9929F47901',
+	width: 50,
+	height: 25,
 	fps: 24,
 	color: "#FFFFFF",
 	opacity: 0.00,
 	manifest: [
-		{src:"images/McMessages_atlas_.png?1590763429122", id:"McMessages_atlas_"}
+		{src:"images/McNext_atlas_.png?1590764295726", id:"McNext_atlas_"}
 	],
 	preloads: []
 };
@@ -226,7 +124,7 @@ an.bootstrapCallback=function(fnCallback) {
 };
 
 an.compositions = an.compositions || {};
-an.compositions['8FE286A2761EC44CA32E85E27A8E4C8F'] = {
+an.compositions['F0BBE2FF7087F9499AE94D9929F47901'] = {
 	getStage: function() { return exportRoot.stage; },
 	getLibrary: function() { return lib; },
 	getSpriteSheet: function() { return ss; },

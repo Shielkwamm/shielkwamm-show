@@ -3,26 +3,28 @@ import styles from './burgerPhones.module.css'
 import Link from 'next/link'
 import { useState } from 'react'
 import classNames from 'classnames'
-//import { getStaticProps } from 'next';
 
-function BurgerPhones ( ) {
-  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+function BurgerPhones () {
+  const [burgerState, setBurgerState] = useState("notReady");
   let actorIsFinished = false;
   let talkIsFinished = false;
   let burgerStyles = ['flex', 'mb-4', styles.viewScreen];
+  if(burgerState !== "closed" || burgerState !== "notReady") {
+    burgerStyles.push(styles.showBurger);
+  }
   const checkFinished = () => {
     if(actorIsFinished && talkIsFinished) {
-      setIsBurgerOpen(false);
+      setBurgerState("closed");
     }
   }
   const actorHasFinished = () => {
     actorIsFinished = true;
-    actor().gotoAndStop(0);
+    actor().gotoAndStop("intro");
     checkFinished();
   }
   const talkHasFinished = () => {
     talkIsFinished = true;
-    talk().gotoAndStop(0);
+    talk().gotoAndStop("intro");
     checkFinished();
   }
   const actor = () => {
@@ -31,29 +33,36 @@ function BurgerPhones ( ) {
   const talk = () => {
     return document.querySelector("#burger-message").contentWindow.stage.children[0].talk;
   }
-  
-  if(isBurgerOpen) {
-    burgerStyles.push(styles.showBurger);
-  }
-  let burgerMessages = [];
-  const burgerPhone = e => {
+  const initBurgerPhone = () => {
     burgerMessages = getBurgerMessages();
     actor().hasFinished = actorHasFinished;
     talk().hasFinished = talkHasFinished;
-    if(!isBurgerOpen) {
-      setIsBurgerOpen(true);
-      setBurgerMessage("wowzah");
-      actor().gotoAndPlay("intro");
-      talk().gotoAndPlay("intro");
+    setBurgerState("closed");
+    openBurgerPhone();
+  }
+  const openBurgerPhone = () => {
+    setBurgerState("open");
+    setBurgerMessage("wowzah");
+    actor().gotoAndPlay("intro");
+    talk().gotoAndPlay("intro");
+  }
+  let burgerMessages = [];
+  const burgerPhone = e => {
+    if(burgerState === "notReady") {
+      initBurgerPhone();
+    }
+    else if(burgerState === "closed") {
+      openBurgerPhone();
       //document.querySelector("#burger-message").contentWindow.stage.children[0].messageBubble.
     }
     /*else if(messageIndex < burgerMessages.length) {
       setBurgerMessage();
     }*/
-    else {
+    else if(burgerState !== "closing") {
       //setIsBurgerOpen(false);
       actor().gotoAndPlay("exit");
       talk().gotoAndPlay("exit");
+      setBurgerState("closing");
       //document.querySelector("#burger-phone").contentWindow.stage.children[0].messageBubble.gotoAndPlay("bubbleClose");
       //messageIndex = 0;
     }
@@ -64,8 +73,14 @@ function BurgerPhones ( ) {
     // = burgerMessages[messageIndex].message;
     //messageIndex++;
   }
+  
   return (
     <>
+    {burgerState === "open" ? (
+      <>
+      <Head><title>🍔 Slipurrrrss 🍔</title></Head>
+      </>
+    ): null }
     <div className={classNames(burgerStyles)}>
       <iframe className={classNames('w-1/4', 'sm:w-1/4', 'md:w-1/3', 'lg:w-1/5', styles.messages)} id="burger-phone" src='/Slipurrrrss/Slipurrrrss.html'></iframe>
       <iframe className={classNames('w-3/4', 'sm:w-3/4', 'md:w-2/3', 'lg:w-4/5', styles.messages)} id="burger-message" src='/McMessages/McMessages.html'></iframe>

@@ -76,8 +76,7 @@ export default function Zim () {
     }
   });
   return (
-    <Layout home>
-
-    </Layout>
+    <>
+    </>
   )
 }
