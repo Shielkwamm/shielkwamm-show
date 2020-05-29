@@ -7,7 +7,7 @@ export default function Zim () {
   useEffect(()=> {
     //alert(JSON.stringify(catFact))
     
-    const scaling = "fit"; // this will resize to fit inside the screen dimensions
+    const scaling = "full"; // this will resize to fit inside the screen dimensions
     const width = 1024;
     const height = 768;
     const color = clear; // ZIM colors like green, blue, pink, faint, clear, etc.

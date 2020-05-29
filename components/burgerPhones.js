@@ -7,12 +7,29 @@ import classNames from 'classnames'
 
 function BurgerPhones ( ) {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+  let actorIsFinished = false;
+  let talkIsFinished = false;
   let burgerStyles = ['flex', 'mb-4', styles.viewScreen];
+  const checkFinished = () => {
+    if(actorIsFinished && talkIsFinished) {
+      setIsBurgerOpen(false);
+    }
+  }
+  const actorHasFinished = () => {
+    actorIsFinished = true;
+    actor().gotoAndStop(0);
+    checkFinished();
+  }
+  const talkHasFinished = () => {
+    talkIsFinished = true;
+    talk().gotoAndStop(0);
+    checkFinished();
+  }
   const actor = () => {
     return document.querySelector("#burger-phone").contentWindow.stage.children[0].actor;
   }
   const talk = () => {
-    return document.querySelector("#burger-message").contentWindow.stage.children[0].message;
+    return document.querySelector("#burger-message").contentWindow.stage.children[0].talk;
   }
   
   if(isBurgerOpen) {
@@ -21,11 +38,13 @@ function BurgerPhones ( ) {
   let burgerMessages = [];
   const burgerPhone = e => {
     burgerMessages = getBurgerMessages();
+    actor().hasFinished = actorHasFinished;
+    talk().hasFinished = talkHasFinished;
     if(!isBurgerOpen) {
       setIsBurgerOpen(true);
       setBurgerMessage("wowzah");
-      actor().play();
-      talk().gotoAndPlay("bubbleOpen");
+      actor().gotoAndPlay("intro");
+      talk().gotoAndPlay("intro");
       //document.querySelector("#burger-message").contentWindow.stage.children[0].messageBubble.
     }
     /*else if(messageIndex < burgerMessages.length) {
@@ -41,7 +60,7 @@ function BurgerPhones ( ) {
   }
   let messageIndex = 0;
   const setBurgerMessage = (message) => {
-    talk().textbox_mc.textbox.text
+    //talk().textbox_mc.textbox.text
     // = burgerMessages[messageIndex].message;
     //messageIndex++;
   }

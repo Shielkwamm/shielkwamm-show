@@ -124,17 +124,21 @@ p.nominalBounds = new cjs.Rectangle(6.1,-2.1,208,57.5);
 
 
 (lib.speech = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{bubbleOpen:1,bubbleClose:16});
+	this.initialize(mode,startPosition,loop,{intro:1,exit:16});
 
 	// timeline functions:
 	this.frame_0 = function() {
 		this.stop();
+		this.hasFinished = function() {
+			alert("mcDid you forget to assign a function? Did you not drill your props?");
+		}
 	}
 	this.frame_15 = function() {
 		this.stop();
 	}
 	this.frame_21 = function() {
-		this.gotoAndStop(0);
+		this.stop();
+		this.hasFinished();
 	}
 
 	// actions tween:
@@ -165,10 +169,10 @@ p.nominalBounds = new cjs.Rectangle(-6.5,-3.1,215.7,53.300000000000004);
 	this.initialize(mode,startPosition,loop,{});
 
 	// Layer_1
-	this.message = new lib.speech();
-	this.message.setTransform(0.1,31.5);
+	this.talk = new lib.speech();
+	this.talk.setTransform(0.1,31.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.message).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.talk).wait(1));
 
 	this._renderFirstFrame();
 
@@ -183,7 +187,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 0.00,
 	manifest: [
-		{src:"images/McMessages_atlas_.png", id:"McMessages_atlas_"}
+		{src:"images/McMessages_atlas_.png?1590759474802", id:"McMessages_atlas_"}
 	],
 	preloads: []
 };
