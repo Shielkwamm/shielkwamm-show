@@ -8,43 +8,12 @@
   z-index: 666;
 }
 
-.burgerPhone {
-  position: fixed;
-  left: 85px;
-  bottom: 3px;
-  font-size: 45px;
-  cursor: grab;
-  display: relative;
-  z-index: 666;
-}
-
 .nice {
   position: fixed;
   left: 145px;
   bottom: 3px;
   font-size: 45px;
   cursor: crosshair;
-  display: relative;
-  z-index: 666;
-}
-
-.messages {
-  left: 10px;
-  top: 0;
-  height: 250px;
-  display: relative;
-  z-index: 666;
-}
-
-.burgerMessage {
-  position: fixed;
-  display: relative;
-}
-
-.viewScreen {
-  position: fixed;
-  width: 100%;
-  top: 0;
   display: relative;
   z-index: 666;
 }
