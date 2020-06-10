@@ -64,13 +64,13 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 	// Layer_1
 	this.instance = new lib.CachedBmp_2();
-	this.instance.setTransform(161.5,-18.55,0.5,0.5);
+	this.instance.setTransform(161.55,-18.55,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
 	this._renderFirstFrame();
 
-}).prototype = getMCSymbolPrototype(lib.Symbol5, new cjs.Rectangle(161.5,-18.5,268,112.5), null);
+}).prototype = getMCSymbolPrototype(lib.Symbol5, new cjs.Rectangle(161.6,-18.5,268,112.5), null);
 
 
 (lib.Symbol1 = function(mode,startPosition,loop) {
@@ -129,16 +129,15 @@ p.nominalBounds = new cjs.Rectangle(6.1,-2.1,208,57.5);
 	// timeline functions:
 	this.frame_0 = function() {
 		this.stop();
-		this.hasFinished = function() {
-			alert("mcDid you forget to assign a function? Did you not drill your props?");
-		}
+		window.dispatchEvent(new Event("actorReady"));
 	}
 	this.frame_15 = function() {
 		this.stop();
+		window.dispatchEvent(new Event("actingFinished"));
 	}
 	this.frame_21 = function() {
 		this.stop();
-		this.hasFinished();
+		window.dispatchEvent(new Event("actingFinished"));
 	}
 
 	// actions tween:
@@ -146,10 +145,10 @@ p.nominalBounds = new cjs.Rectangle(6.1,-2.1,208,57.5);
 
 	// text
 	this.textbox_mc = new lib.textbox3();
-	this.textbox_mc.setTransform(102.4,21.2,1,1,0,0,0,97.6,17.7);
+	this.textbox_mc.setTransform(-324.55,94.1,1,1,0,0,0,97.6,17.7);
 	this.textbox_mc.alpha = 0;
 
-	this.timeline.addTween(cjs.Tween.get(this.textbox_mc).wait(9).to({alpha:1},6).wait(1).to({alpha:0},5).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.textbox_mc).wait(9).to({x:102.4,y:21.2},0).to({alpha:1},6).wait(1).to({alpha:0},5).wait(1));
 
 	// Layer_3
 	this.instance = new lib.messageBg();
@@ -162,7 +161,7 @@ p.nominalBounds = new cjs.Rectangle(6.1,-2.1,208,57.5);
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-6.5,-3.1,215.7,53.300000000000004);
+p.nominalBounds = new cjs.Rectangle(-422.1,-3.1,631.4000000000001,114.89999999999999);
 
 
 // stage content:
@@ -170,15 +169,15 @@ p.nominalBounds = new cjs.Rectangle(-6.5,-3.1,215.7,53.300000000000004);
 	this.initialize(mode,startPosition,loop,{});
 
 	// Layer_1
-	this.talk = new lib.speech();
-	this.talk.setTransform(0.1,31.5);
+	this.actor = new lib.speech();
+	this.actor.setTransform(0.1,31.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.talk).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.actor).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(108.4,85,91.69999999999999,-14.599999999999994);
+p.nominalBounds = new cjs.Rectangle(-318.5,157.9,91.69999999999999,-14.599999999999994);
 // library properties:
 lib.properties = {
 	id: '8FE286A2761EC44CA32E85E27A8E4C8F',
@@ -188,7 +187,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 0.00,
 	manifest: [
-		{src:"images/McMessages_atlas_.png?1590763429122", id:"McMessages_atlas_"}
+		{src:"images/McMessages_atlas_.png", id:"McMessages_atlas_"}
 	],
 	preloads: []
 };

@@ -1,0 +1,97 @@
+{
+  "theSetup": {
+    "name": "McBurgerPhones",
+    "toggle": {
+      "text": "🍔",
+      "open": "intro",
+      "close": "exit"
+    },
+    "header": "🍔 Slipurrrrss 🍔",
+    "actors": [{
+      "handle": "Slipurrrrss",
+      "type": "basic",
+      "src": "/Slipurrrrss/Slipurrrrss.html",
+      "intro": {
+        "label": "intro",
+        "waitUntilDone": true
+      },
+      "idle": {
+        "label": "idle"
+      },
+      "outro": {
+        "label": "exit", 
+        "waitUntilDone": true
+      },
+      "mc": "actor"
+    },
+    {
+      "handle": "McMessages",
+      "type": "messageBox",
+      "src": "/McMessages/McMessages.html",
+      "nextButtonSrc": "/McNext/McNext.html",
+      "intro": {
+        "label": "intro",
+        "waitUntilDone": true
+      },
+      "idle": {
+        "label": "idle"
+      },
+      "outro": {
+        "label": "exit",
+        "waitUntilDone": false
+      },
+      "mc": "actor",
+      "textBox": "textbox_mc.textbox"
+    }]
+  },
+  "states": [
+    {
+      "time": "1:53 AM", 
+      "handle": "Slipurrrrss", 
+      "mood": "||〠", 
+      "message": "[sic] *hic* [sic], I think we should see other people..."
+    },
+    {
+      "time": "1:54 AM",
+      "handle": "Slipurrrrss",
+      "mood": "|{〠}|",
+      "message": "Look, I just don't want to waste your time..."
+    },
+    {
+      "time": "1:55 AM",
+      "handle": "Slipurrrrss",
+      "mood": "|_〠}",
+      "message": "...it really hurts me... I trusted you..."
+    },
+    {
+      "time": "1:56 AM",
+      "handle": "Slipurrrrss",
+      "mood": "-{[〠]-",
+      "message": "...you're always listening to that stupid Путин song..."
+    },
+    {
+      "time": "1:57 AM",
+      "handle": "Slipurrrrss",
+      "mood": "{-[〠]-}",
+      "message": "... FrogMan... you're just going down the list......"
+    },
+    {
+      "time": "1:58 AM",
+      "handle": "Slipurrrrss",
+      "mood": "--〠--",
+      "message": "...you're just trying to get people's attention..."
+    },
+    {
+      "time": "1:59 AM",
+      "handle": "Slipurrrrss",
+      "mood": "-{-[〠]-}-",
+      "message": "...you said you would vote for me in November..."
+    },
+    {
+      "time": "2:01 AM",
+      "handle": "Slipurrrrss",
+      "mood": "+🍕",
+      "message": "I'm glad I didn't trust you... again... HAGS."
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import styles from './layout.module.css'
 import Link from 'next/link'
 import { useState } from 'react'
 import classNames from 'classnames'
-import BurgerPhones from './burgerPhones.js';
+import Situation from './situation'
 
 export default function Layout({ children }) {
   return (
@@ -20,7 +20,7 @@ export default function Layout({ children }) {
     </Head>
     
     <main>{children}</main>
-    <BurgerPhones/>
+    <Situation theSituationJSON="/mcSituation.json"/>
     <iframe className={styles.sheilkwamm} src='/Shielkwamm/Shielkwamm.html'></iframe>
     <Link href="/"><div className={classNames(styles.linkMe, styles.sheilkwamm)}></div></Link>
     <Link href="/nice"><div className={styles.nice}>🙄</div></Link>

@@ -1,0 +1,28 @@
+.burgerNext {
+  position: fixed;
+  display: relative;
+  width: 100px;
+  right: 0;
+  top:144px;
+  height: 50px;
+  z-index:667;
+}
+
+.burgerNextClick {
+  position: fixed;
+  display: relative;
+  width: 100px;
+  right: 0;
+  top:144px;
+  height: 50px;
+  z-index:668;
+  cursor: alias;
+}
+
+.messages {
+  left: 10px;
+  top: 0;
+  height: 250px;
+  display: relative;
+  z-index: 666;
+}

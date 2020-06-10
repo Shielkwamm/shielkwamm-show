@@ -11,7 +11,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_28 = function() {
+(lib.CachedBmp_1 = function() {
 	this.initialize(ss["McNext_atlas_"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
@@ -38,7 +38,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.initialize(mode,startPosition,loop,{});
 
 	// Layer_1
-	this.instance = new lib.CachedBmp_28();
+	this.instance = new lib.CachedBmp_1();
 	this.instance.setTransform(0,0,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
@@ -49,18 +49,32 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 
 (lib.Next = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
+	this.initialize(mode,startPosition,loop,{inactive:0,active:1});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		this.stop();
+		window.dispatchEvent(new Event("actorReady"));
+	}
+	this.frame_15 = function() {
+		this.gotoAndPlay("active");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(15).call(this.frame_15).wait(1));
 
 	// Layer_1
 	this.instance = new lib.Symbol1();
 	this.instance.setTransform(14.85,7,1,1,0,0,0,12.3,8);
+	this.instance.alpha = 0.3594;
+	this.instance._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:34.85},6).wait(3));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).to({x:34.85,alpha:1},11,cjs.Ease.quadOut).wait(4));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(2.6,-1,44.5,16);
+p.nominalBounds = new cjs.Rectangle(0,-1,47.1,16);
 
 
 // stage content:
@@ -68,15 +82,15 @@ p.nominalBounds = new cjs.Rectangle(2.6,-1,44.5,16);
 	this.initialize(mode,startPosition,loop,{});
 
 	// Layer_1
-	this.plusplus = new lib.Next();
-	this.plusplus.setTransform(23.1,21.25,1,1,0,0,0,23.9,15.5);
+	this.actor = new lib.Next();
+	this.actor.setTransform(23.1,21.25,1,1,0,0,0,23.9,15.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.plusplus).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.actor).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(26.8,17.3,-0.5,3.5);
+p.nominalBounds = new cjs.Rectangle(0,0,0,0);
 // library properties:
 lib.properties = {
 	id: 'F0BBE2FF7087F9499AE94D9929F47901',
@@ -86,7 +100,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 0.00,
 	manifest: [
-		{src:"images/McNext_atlas_.png?1590764295726", id:"McNext_atlas_"}
+		{src:"images/McNext_atlas_.png?1591829168876", id:"McNext_atlas_"}
 	],
 	preloads: []
 };
