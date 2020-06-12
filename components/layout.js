@@ -22,9 +22,9 @@ export default function Layout({ children }) {
     <main>{children}</main>
     <Situation theSituationJSON="/mcSituation.json"/>
     <iframe className={styles.sheilkwamm} src='/Shielkwamm/Shielkwamm.html'></iframe>
-    <Link href="/"><div className={classNames(styles.linkMe, styles.sheilkwamm)}></div></Link>
-    <Link href="/nice"><div className={styles.nice}>🙄</div></Link>
-    <Link href="/zim"><div className={styles.meow}>🐈</div></Link>
+    <Link href="/"><div className={classNames(styles.linkMe, styles.sheilkwamm, "noUserSelect")}></div></Link>
+    <Link href="/nice"><div className={classNames(styles.nice, "noUserSelect")}>🙄</div></Link>
+    <Link href="/zim"><div className={classNames(styles.meow, "noUserSelect")}>🐈</div></Link>
     </>
   )
 }

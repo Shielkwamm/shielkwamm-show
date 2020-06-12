@@ -11,11 +11,11 @@ export default function messageBox({ actor }) {
   }
 
   useEffect(() => {
-    actorIframe.current = document.getElementById("burger-message");
+    actorIframe.current = document.getElementById("messageBox");
     actorIframe.current.onload = function() {
       actorIframe.current.contentWindow.addEventListener("actorReady", actorInit);
     }
-    nextButtonIframe.current = document.getElementById("burger-next");
+    nextButtonIframe.current = document.getElementById("messageNext");
     nextButtonIframe.current.onload = function() {
       nextButtonIframe.current.contentWindow.addEventListener("actorReady", nextButtonInit);
     }
@@ -35,9 +35,9 @@ export default function messageBox({ actor }) {
 
   return (
     <>
-      <iframe className={classNames('w-3/4', 'sm:w-3/4', 'md:w-2/3', 'lg:w-4/5', styles.messages)} id="burger-message" src={actor.src}></iframe>
-      <iframe className={classNames(styles.burgerNext)} id="burger-next" src={actor.nextButtonSrc}></iframe>
-      <div onClick={theSituation.nextState} className={classNames(styles.burgerNextClick)}></div>
+      <iframe className={classNames('w-3/4', 'sm:w-3/4', 'md:w-2/3', 'lg:w-4/5', styles.messageBox, "noUserSelect", "noPointerEvents")} id="messageBox" src={actor.src}></iframe>
+      <iframe className={classNames(styles.messageNext, "noUserSelect", "noPointerEvents")} id="messageNext" src={actor.nextButtonSrc}></iframe>
+      <div onClick={theSituation.nextState} className={classNames(styles.messageNextClick, "noUserSelect")}></div>
     </>
   )
 }

@@ -36,3 +36,11 @@ iframe {
 .online {
   color: #5fdba7;
 }
+
+.noPointerEvents {
+  pointer-events: none;
+}
+
+.noUserSelect {
+  user-select: none;
+}

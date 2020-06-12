@@ -7,7 +7,7 @@ export default function ActorPortrait({ actor }) {
   const actorIframe = useRef(null);
 
   useEffect(() => {
-    actorIframe.current = document.getElementById("burger-phone");
+    actorIframe.current = document.getElementById("actorPortrait");
     actorIframe.current.onload = function() {
       actorIframe.current.contentWindow.addEventListener("actorReady", actorInit);
     }
@@ -27,7 +27,7 @@ export default function ActorPortrait({ actor }) {
   
   return (
     <>
-    <iframe className={classNames('w-1/4', 'sm:w-1/4', 'md:w-1/3', 'lg:w-1/5', styles.messages)} id="burger-phone" src={actor.src}></iframe>
+    <iframe className={classNames('w-1/4', 'sm:w-1/4', 'md:w-1/3', 'lg:w-1/5', "noUserSelect", "noPointerEvents", styles.actorPortrait)} id="actorPortrait" src={actor.src}></iframe>
     </>
   )
 }
