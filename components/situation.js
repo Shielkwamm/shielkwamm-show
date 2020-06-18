@@ -13,23 +13,23 @@ function SituationInner({ theSetup }) {
     burgerStyles.push(styles.showBurger);
   }
   const toggleSituation = () => {
-    if(!isSituationOpen && theSituation.actorsState !== "intro") {
+    if(!isSituationOpen) {
       setIsSituationOpen(true);
       theSituation.startSituation();
     }
-    else if(isSituationOpen && theSituation.actorsState !== "outro") {
+    else if(isSituationOpen) {
       theSituation.endSituation()
     }
   }
 
-  const cleanUpSituation = () => {
+  const cleanUpSituation = (e) => {
     setIsSituationOpen(false)
   }
 
   useEffect(() => {
-    window.addEventListener("situationOver", cleanUpSituation);
+    window.addEventListener("situationFinished", cleanUpSituation);
     return function cleanup() {
-      window.removeEventListener("situationOver", cleanUpSituation);
+      window.removeEventListener("situationFinished", cleanUpSituation);
     }
   })
 

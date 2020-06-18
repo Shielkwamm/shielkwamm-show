@@ -7,7 +7,7 @@ export default function messageBox({ actor }) {
   const nextButtonIframe = useRef(null);
 
   const actingFinished = () => {
-    theSituation.setActorState(actor.handle, theSituation.getActorState(actor.handle) + "_done");
+    theSituation.setActorState(actor.handle, theSituation.getActorState(actor.handle).name, true);
   }
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function messageBox({ actor }) {
     theSituation.setActorMc(actor.handle, actorIframe.current.contentWindow.stage.children[0].actor)
     actorIframe.current.contentWindow.removeEventListener("actorReady", actorInit);
     actorIframe.current.contentWindow.addEventListener("actingFinished", actingFinished);
-    //setCuedAnimation(cuedAnimation.slice(1, cuedAnimation.length-1));
+    theSituation.setActorState(actor.handle, theSituation.getActorState(actor.handle).name, true);
   }
 
   return (

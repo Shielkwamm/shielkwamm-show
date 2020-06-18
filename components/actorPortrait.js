@@ -15,13 +15,14 @@ export default function ActorPortrait({ actor }) {
 
   const actingFinished = () => {
     //handle when acts are finished ie change state to something
-    theSituation.setActorState(actor.handle, theSituation.getActorState(actor.handle) + "_done");
+    theSituation.setActorState(actor.handle, theSituation.getActorState(actor.handle).name, true);
   }
 
   const actorInit = () => {
     theSituation.setActorMc(actor.handle, actorIframe.current.contentWindow.stage.children[0].actor)
     actorIframe.current.contentWindow.removeEventListener("actorReady", actorInit);
     actorIframe.current.contentWindow.addEventListener("actingFinished", actingFinished);
+    theSituation.setActorState(actor.handle, theSituation.getActorState(actor.handle).name, true);
     //setCuedAnimation(cuedAnimation.slice(1, cuedAnimation.length-1));
   }
   
