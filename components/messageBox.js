@@ -2,12 +2,12 @@ import { useState, useRef, useEffect } from 'react'
 import styles from './messageBox.module.css'
 import classNames from 'classnames'
 
-export default function messageBox({ actor }) {
+export default function messageBox({ actorData }) {
   const actorIframe = useRef(null);
   const nextButtonIframe = useRef(null);
 
   const actingFinished = () => {
-    theSituation.setActorState(actor.handle, theSituation.getActorState(actor.handle).name, true);
+    theSituation.setActorState(actorData.handle, theSituation.getActorState(actorData.handle).name, true);
   }
 
   useEffect(() => {
@@ -22,21 +22,21 @@ export default function messageBox({ actor }) {
   })
 
   const nextButtonInit = () => {
-    theSituation.setNextButtonMc(actor.handle, nextButtonIframe.current.contentWindow.stage.children[0].actor);
+    theSituation.setNextButtonMc(actorData.handle, nextButtonIframe.current.contentWindow.stage.children[0].actor);
     nextButtonIframe.current.contentWindow.removeEventListener("actorReady", nextButtonInit);
   }
 
   const actorInit = () => {
-    theSituation.setActorMc(actor.handle, actorIframe.current.contentWindow.stage.children[0].actor)
+    theSituation.setActorMc(actorData.handle, actorIframe.current.contentWindow.stage.children[0].actor)
     actorIframe.current.contentWindow.removeEventListener("actorReady", actorInit);
     actorIframe.current.contentWindow.addEventListener("actingFinished", actingFinished);
-    theSituation.setActorState(actor.handle, theSituation.getActorState(actor.handle).name, true);
+    theSituation.setActorState(actorData.handle, theSituation.getActorState(actorData.handle).name, true);
   }
 
   return (
     <>
-      <iframe className={classNames('w-3/4', 'sm:w-3/4', 'md:w-2/3', 'lg:w-4/5', styles.messageBox, "noUserSelect", "noPointerEvents")} id="messageBox" src={actor.src}></iframe>
-      <iframe className={classNames(styles.messageNext, "noUserSelect", "noPointerEvents")} id="messageNext" src={actor.nextButtonSrc}></iframe>
+      <iframe className={classNames('w-3/4', 'sm:w-3/4', 'md:w-2/3', 'lg:w-4/5', styles.messageBox, "noUserSelect", "noPointerEvents")} id="messageBox" src={actorData.src}></iframe>
+      <iframe className={classNames(styles.messageNext, "noUserSelect", "noPointerEvents")} id="messageNext" src={actorData.nextButtonSrc}></iframe>
       <div onClick={theSituation.nextState} className={classNames(styles.messageNextClick, "noUserSelect")}></div>
     </>
   )

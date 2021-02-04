@@ -2,6 +2,13 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from './index.module.css'
 
+export default function Home() {
+  return (
+    <div className={styles.percent20}></div>
+  )
+}
+
+/*
 export default function Home () {
   return (
     <div className={styles.percent20}>
@@ -14,4 +21,4 @@ export default function Home () {
       <iframe className={styles.ship} src='/Ship/Ship.html'></iframe>
     </div>
   )
-}
+}*/

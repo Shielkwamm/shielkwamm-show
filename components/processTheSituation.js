@@ -24,7 +24,10 @@ export default function processTheSituation (situation) {
         if(actor.handle === actorHandle) actor.state = {name: actorState, isDone}
         return actor;
       })
-      theSituation.checkAllAnimationDone();
+      let allAnimationDone = theSituation.checkAllAnimationDone();
+      if(allAnimationDone && actorState !== "loading" && theSituation.getCurrentState().gotoNext === true) {
+        theSituation.nextState()
+      }
     },
     setAllActorsState: (actorState, isDone) => {
       theSituation.actors = theSituation.actors.map(actor => {
@@ -57,12 +60,24 @@ export default function processTheSituation (situation) {
       }
       if(isAllAnimationDone && !theSituation.actorsState.isDone) {
         theSituation.actorsState.isDone = true;
-        window.dispatchEvent(new CustomEvent("allActingFinished", {detail: {name: theSituation.actorsState.name}}));
-        if(theSituation.stateIndex === theSituation.states.length - 1) {
-          window.dispatchEvent(new Event("situationFinished"));
+        if(theSituation.actorState === "loading") {
+          window.dispatchEvent(new Event("actorsLoaded"));
+          theSituation.updateState();
+        }
+        else {
+          window.dispatchEvent(new CustomEvent("allActingFinished", {detail: {name: theSituation.actorsState.name}}));
+          theSituation.checkSituationFinished();   
         }
       }
       return isAllAnimationDone;
+    },
+    checkSituationFinished: () => {
+      if(theSituation.stateIndex === theSituation.states.length - 1) {
+        window.dispatchEvent(new Event("situationFinished"));
+        theSituation.actors.forEach(actor => {
+          actor.nextButtonMc?.gotoAndPlay("inactive");
+        })
+      }
     },
     setNextButtonMc: (actorHandle, nextButtonMc) => {
       theSituation.actors = theSituation.actors.map(actor => {

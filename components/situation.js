@@ -44,10 +44,10 @@ function SituationInner({ theSetup }) {
         {theSetup.actors.map(actor => (
           <React.Fragment key={actor.handle}>
           {actor.type === "basic" ? (
-            <ActorPortrait actor={actor} />
+            <ActorPortrait actorData={actor} />
           ): null}
           {actor.type === "messageBox" ?(
-            <MessageBox actor={actor} />
+            <MessageBox actorData={actor} />
           ): null}
           </React.Fragment>
         ))}

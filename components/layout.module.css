@@ -1,21 +1,5 @@
-.sheilkwamm {
-  position: fixed;
-  left: 0;
-  bottom: 5px;
-  width: 75px;
-  height: 75px;
-  display: relative;
-  z-index: 666;
-}
-
-.nice {
-  position: fixed;
-  left: 145px;
-  bottom: 3px;
-  font-size: 45px;
+.acktueli {
   cursor: crosshair;
-  display: relative;
-  z-index: 666;
 }
 
 .linkMe {
@@ -24,12 +8,30 @@
   z-index: 666;
 }
 
-.meow {
-  position: fixed;
-  left: 205px;
-  bottom: 3px;
-  font-size: 45px;
+.shielkwammGuide  {
   cursor: grab;
+}
+
+.navLeft {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.navRight {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+.navRight div {
+  display: inline-block;
+  width: 66px;
+  font-size: 45px;
   display: relative;
   z-index: 666;
+}
+
+.navRight .shielkwammGithub {
+  font-size: 40px;
 }
