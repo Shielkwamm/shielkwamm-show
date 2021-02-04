@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import classNames from 'classnames'
 import Situation from './situation'
+import React from 'react'
 
 export default function Layout({ children }) {
   return (

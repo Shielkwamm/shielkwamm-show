@@ -5,6 +5,7 @@ import ActorPortrait from './actorPortrait'
 import MessageBox from './messageBox'
 import processTheSituation  from './processTheSituation'
 import Head from 'next/head'
+import React from 'react'
 
 function SituationInner({ theSetup }) {
   const [isSituationOpen, setIsSituationOpen] = useState(false);
