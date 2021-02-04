@@ -30,6 +30,10 @@ export default function Layout({ children }) {
     <a href="https://acktueli.com"><div className={classNames(styles.acktueli, "noUserSelect")}>◫</div></a>
     <a href="https://github.com/orgs/Shielkwamm/projects/3"><div className={classNames(styles.shielkwammGithub, "noUserSelect")}>📷</div></a>
     </div>
+    <div className={classNames(styles.navRightVertical)}>
+    <Link href="/database"><div className={classNames(styles.linkMe, styles.database, "noUserSelect")}>🌈</div></Link>
+    <Link href="/best-sh"><div className={classNames(styles.linkMe, styles.bestSh, "noUserSelect")}>💎</div></Link>
+    </div>
     </>
   )
 }

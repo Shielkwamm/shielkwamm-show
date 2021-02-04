@@ -12,3 +12,5 @@ yarn-error.log*
 # Animate CC
 *RECOVER_*
 *DataStore*
+
+out/*

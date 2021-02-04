@@ -35,3 +35,15 @@
 .navRight .shielkwammGithub {
   font-size: 40px;
 }
+
+.navRightVertical {
+  width: 66px;
+  font-size: 35px;
+  position: fixed;
+  right: 0;
+  bottom: 55px;
+}
+
+.navRightVertical div{
+  height: 66px;
+}
