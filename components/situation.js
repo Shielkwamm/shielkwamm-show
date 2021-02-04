@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-import styles from './Situation.module.css'
+import styles from './situation.module.css'
 import classNames from 'classnames'
 import ActorPortrait from './actorPortrait'
 import MessageBox from './messageBox'
