@@ -40,8 +40,9 @@
   width: 66px;
   font-size: 35px;
   position: fixed;
-  right: 0;
-  bottom: 55px;
+  left: 13px;
+  bottom: 65px;
+  z-index: 666
 }
 
 .navRightVertical div{

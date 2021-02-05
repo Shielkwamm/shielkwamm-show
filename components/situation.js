@@ -6,6 +6,7 @@ import MessageBox from './messageBox'
 import processTheSituation  from './processTheSituation'
 import Head from 'next/head'
 import React from 'react'
+import Link from 'next/link'
 
 function SituationInner({ theSetup }) {
   const [isSituationOpen, setIsSituationOpen] = useState(false);
@@ -53,7 +54,7 @@ function SituationInner({ theSetup }) {
           </React.Fragment>
         ))}
       </div>
-      <div onClick={toggleSituation} className={styles.burgerPhone}>{theSetup.toggle.text}</div>
+      <Link href="/"><div onClick={toggleSituation} className={styles.burgerPhone}>{theSetup.toggle.text}</div></Link>
     </>
   )
 }
