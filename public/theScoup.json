@@ -39,13 +39,13 @@
     {
       "time": "5:53 PM", 
       "handle": "Scoup", 
-      "mood": {"name": "idle", "glyph": "+/o🍦"},
+      "mood": {"name": "idle", "mood": "+/o🍦"},
       "message": "You made me an ice cream cone?"
     },
     {
       "time": "5:53 PM", 
       "handle": "Scoup", 
-      "mood": {"name": "idle", "glyph": "+🍦[x]/)"},
+      "mood": {"name": "idle", "mood": "+🍦[x]/)"},
       "message": "Are you going to melt me or something?"
     },
     {

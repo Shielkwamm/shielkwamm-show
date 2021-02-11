@@ -77,6 +77,10 @@ export default function Zim () {
   });
   return (
     <>
+    <Head>
+      <script src="https://zimjs.org/cdn/1.3.0/createjs.js"></script>
+      <script src="https://zimjs.org/cdn/10.9.0/zim.js"></script>
+    </Head>
     </>
   )
 }

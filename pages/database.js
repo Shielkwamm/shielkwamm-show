@@ -7,7 +7,10 @@ export default function currentData () {
     <>
     <Head>
       <title>△[database]</title>
-      <description>What is the state of the world of Shielkwamm?  Literal Database entries right here, bruh!</description>
+      <meta
+        name="description"
+        content="What is the state of the world of Shielkwamm?  Literal Database entries right here, bruh!"
+      />
     </Head>
       <Content/>
     </>

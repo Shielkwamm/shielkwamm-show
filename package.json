@@ -16,6 +16,7 @@
     "next": "^10.0.6",
     "postcss": "^8.2.4",
     "react": "^17.0.1",
+    "react-adobe-animate": "^2.5.0",
     "react-dom": "^17.0.1",
     "react-ga": "^3.3.0"
   },

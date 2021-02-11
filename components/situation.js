@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import styles from './situation.module.css'
 import classNames from 'classnames'
 import ActorPortrait from './actorPortrait'
-import MessageBox from './messageBox'
+import MessageBoxCSS from './messageBoxCSS'
 import processTheSituation  from './processTheSituation'
 import Head from 'next/head'
 import React from 'react'
@@ -48,9 +48,9 @@ function SituationInner({ theSetup }) {
           {actor.type === "basic" ? (
             <ActorPortrait actorData={actor} />
           ): null}
-          {actor.type === "messageBox" ?(
-            <MessageBox actorData={actor} />
-          ): null}
+          
+            <MessageBoxCSS actorData={actor} />
+          
           </React.Fragment>
         ))}
       </div>

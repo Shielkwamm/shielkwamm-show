@@ -16,8 +16,6 @@ export default function Layout({ children }) {
         name="description"
         content="Hello?  I make 10,000 dollars from home a month and you could too!"
       />
-      <script src="https://zimjs.org/cdn/1.3.0/createjs.js"></script>
-      <script src="https://zimjs.org/cdn/10.9.0/zim.js"></script>
     </Head>
     
     <main>{children}</main>

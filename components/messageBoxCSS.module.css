@@ -1,4 +1,4 @@
-.messageCSSNext {
+.messageNext {
   position: fixed;
   display: relative;
   width: 100px;
@@ -8,7 +8,7 @@
   z-index:667;
 }
 
-.messageCSSNextClick {
+.messageNextClick {
   position: fixed;
   display: relative;
   width: 100px;
@@ -19,7 +19,7 @@
   cursor: alias;
 }
 
-.messageCSSBox {
+.messageBox {
   left: 10px;
   top: 0;
   height: 250px;

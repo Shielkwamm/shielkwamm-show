@@ -8,7 +8,10 @@ export default function bestSh () {
     <>
     <Head>
       <title>△^best</title>
-      <description>If you wanna get a good look at a good ===>shkwam===>, well, take a look at these.</description>
+      <meta
+        name="description"
+        content="If you wanna get a good look at a good ===>shkwam===>, well, take a look at these."
+      />
     </Head>
       <Content/>
     </>
