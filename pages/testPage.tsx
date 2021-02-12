@@ -11,7 +11,7 @@ export default function TestPage() {
   const [paused, setPaused] = useState(true);
   const onClick = () => {
     //console.log(animationObject);
-  animationObject.addEventListener("actingFinished", function() {console.log("actingFinished")})
+  animationObject.actor.addEventListener("actingFinished", function() {console.log("actingFinished")})
   animationObject.actor.play();
   }
   useEffect(()=> {
@@ -21,8 +21,6 @@ export default function TestPage() {
   return (
     <div style={{ width: "400px" }}>
     <Head>
-    <script src="https://zimjs.org/cdn/1.3.0/createjs.js"></script>
-      <script src="https://zimjs.org/cdn/10.9.0/zim.js"></script>
       <script src="/TheScoup/Scoup.js" type="text/javascript"></script>
         
       </Head>

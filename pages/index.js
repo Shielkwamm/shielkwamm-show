@@ -36,10 +36,6 @@ export default function Home() {
   });
   return (
     <>
-    <Head>
-      <script src="https://zimjs.org/cdn/1.3.0/createjs.js"></script>
-      <script src="https://zimjs.org/cdn/10.9.0/zim.js"></script>
-    </Head>
     <div className={styles.percent20}></div>
     </>
   )

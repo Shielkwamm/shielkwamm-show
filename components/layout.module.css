@@ -41,7 +41,7 @@
   font-size: 35px;
   position: fixed;
   left: 13px;
-  bottom: 65px;
+  bottom: 0;
   z-index: 666
 }
 
