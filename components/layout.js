@@ -1,16 +1,11 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
 import Link from 'next/link'
-import { useState } from 'react'
 import classNames from 'classnames'
-import Motd from './motd'
 import React from 'react'
 
 export default function Layout({ children }) {
-  const [motdOpen, setMotdOpen] = useState(false);
-  const toggleMotd = () => {
-    setMotdOpen(!motdOpen);
-  }
+
   return (
     <>
       <Head>
@@ -22,22 +17,22 @@ export default function Layout({ children }) {
         />
         <script src="https://zimjs.org/cdn/1.3.0/createjs.js"></script>
         <script src="https://zimjs.org/cdn/10.9.0/zim.js"></script>
+        <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
       </Head>
       <main>{children}</main>
       <div className={classNames(styles.navLeft)}>
         <Link href="/"><div className={classNames(styles.linkMe, styles.sheilkwamm, "noUserSelect")}></div></Link>
       </div>
-      <div className={classNames(styles.navRightVertical)}>
+      <div className={classNames(styles.navLeftVertical)}>
         <Link href="/database"><div className={classNames(styles.linkMe, styles.database, "noUserSelect")}>🌈</div></Link>
         <Link href="/best-sh"><div className={classNames(styles.linkMe, styles.bestSh, "noUserSelect")}>💎</div></Link>
-        <div onClick={() => toggleMotd()} className={classNames(styles.linkMe, styles.motd)}>🍦</div>
+        <Link href="/motd"><div className={classNames(styles.linkMe, styles.motd, "noUserSelect")}>🍦</div></Link>
       </div>
       <div className={classNames(styles.navRight)}>
         <a href="https://guide.shielkwamm.com"><div className={classNames(styles.shielkwammGuide, "noUserSelect")}>⧊</div></a>
         <a href="https://acktueli.com"><div className={classNames(styles.acktueli, "noUserSelect")}>◫</div></a>
-        <a href="https://github.com/orgs/Shielkwamm/projects/3"><div className={classNames(styles.shielkwammGithub, "noUserSelect")}>📷</div></a>
+        <a href="https://github.com/orgs/Shielkwamm/projects"><div className={classNames(styles.shielkwammGithub, "noUserSelect")}>📷</div></a>
       </div>
-      <Motd motdOpen={motdOpen} motdJson="/theScoup.json"></Motd>
     </>
   )
 }

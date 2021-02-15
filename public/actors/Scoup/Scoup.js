@@ -265,7 +265,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 0.00,
 	manifest: [
-		{src:"/TheScoup/images/Scoup_atlas_1.png", id:"Scoup_atlas_1"}
+		{src:"actors/Scoup/images/Scoup_atlas_1.png", id:"Scoup_atlas_1"}
 	],
 	preloads: []
 };

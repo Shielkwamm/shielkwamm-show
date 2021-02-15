@@ -1,33 +1,21 @@
 import { useEffect, useState } from 'react'
 import MotdInner from './motdInner'
 import processMotd from './processMotd'
+import useSetup from '../lib/useSetup'
 
 export default function Motd({ motdJson }) {
   
-  let [motdSetup, setMotdSetup] = useState(false);
+  const theSetup = useSetup('/TheScoup.json')
 
-  let motd = false;
-
-  useEffect(() => {
-    if(!motdSetup) {
-      fetch(motdJson)
-        .then(response => response.json())
-        .then(data => {
-          window.motd = processMotd(data);
-          console.log(data)
-          //setSituationSetup(data.theSetup);
-
-        })
-    }
-  })
   return (
     <>
-    {motdSetup? (
+    {theSetup? (
       <MotdInner theSetup={{}}/>
     ): null }
     </>
   )
 }
+
 
 /*
 import { gql, useQuery } from "@apollo/client";

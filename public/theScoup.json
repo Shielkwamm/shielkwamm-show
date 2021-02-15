@@ -1,33 +1,27 @@
 {
-  "motd": {
+  "setup": {
     "name": "theScoup",
-    "header": "🍦[Scoup]",
-    "actors": [{
-      "handle": "Scoup"
-    }]
+    "header": "🍦[THEScoup]",
+    "actor": "Scoup"
   },
   "states": [
     {
       "time": "5:52 PM",
-      "handle": "Scoup",
       "mood": {"name": "intro"},
       "gotoNext": true
     },
     {
       "time": "5:53 PM", 
-      "handle": "Scoup", 
       "mood": {"name": "idle", "mood": "+/o🍦"},
       "message": "You made me an ice cream cone?"
     },
     {
-      "time": "5:53 PM", 
-      "handle": "Scoup", 
+      "time": "5:53 PM",  
       "mood": {"name": "idle", "mood": "+🍦[x]/)"},
       "message": "Are you going to melt me or something?"
     },
     {
       "time": "1:53 AM",
-      "handle": "Scoup",
       "mood": {"name": "outro"}
     }
   ]

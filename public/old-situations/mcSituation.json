@@ -5,66 +5,7 @@
       "text": "🍔"
     },
     "header": "🍔 Slipurrrrss 🍔",
-    "actors": [{
-      "handle": "Slipurrrrss",
-      "type": "basic",
-      "src": "/Slipurrrrss/Slipurrrrss.html",
-      "states": [{
-        "name": "intro",
-        "label": "intro",
-        "waitUntilDone": true,
-        "timelineCommand": "Play"
-      },
-      {
-        "name": "idle",
-        "label": "idle",
-        "timelineCommand": "Play"
-      },
-      {
-        "name":"bounce",
-        "label": "bounce",
-        "timelineCommand": "Play"
-      },
-      {
-        "name": "outro",
-        "label": "exit", 
-        "waitUntilDone": true,
-        "timelineCommand": "Play"
-      }],
-      "mc": "actor"
-    },
-    {
-      "handle": "McMessages",
-      "type": "messageBox",
-      "src": "/McMessages/McMessages.html",
-      "nextButtonSrc": "/McNext/McNext.html",
-      "owner": "Slipurrrrss",
-      "states" : [
-      {
-        "name": "intro",
-        "label": "intro",
-        "waitUntilDone": true,
-        "timelineCommand": "Play"
-      },
-      {
-        "name": "idle",
-        "label": "idle",
-        "timelineCommand": "Stop"
-      },
-      {
-        "name": "bounce",
-        "label": "idle",
-        "timelineCommand": "Stop"
-      },
-      {
-        "name": "outro",
-        "label": "exit",
-        "waitUntilDone": false,
-        "timelineCommand": "Play"
-      }],
-      "mc": "actor",
-      "textBox": "textbox_mc.textbox"
-    }]
+    "actors": ["Slipurrrrss", "McMessages"]
   },
   "states": [
     {

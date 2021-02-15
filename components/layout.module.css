@@ -36,15 +36,15 @@
   font-size: 40px;
 }
 
-.navRightVertical {
+.navLeftVertical {
   width: 66px;
   font-size: 35px;
   position: fixed;
-  left: 13px;
   bottom: 0;
   z-index: 666
 }
 
-.navRightVertical div{
+.navLeftVertical div{
+  text-align: center;
   height: 66px;
 }
