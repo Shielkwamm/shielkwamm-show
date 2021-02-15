@@ -1,56 +1,27 @@
 {
-  "theSetup": {
+  "setup": {
     "name": "theScoup",
-    "toggle": {
-      "text": "🍦"
-    },
-    "header": "🍦[Scoup]",
-    "actors": [{
-      "handle": "Scoup",
-      "type": "basic",
-      "src": "/TheScoup/Scoup.html",
-      "states": [{
-        "name": "intro",
-        "label": "intro",
-        "waitUntilDone": true,
-        "timelineCommand": "Play"
-      },
-      {
-        "name": "idle",
-        "label": "idle",
-        "timelineCommand": "Play"
-      },
-      {
-        "name": "outro",
-        "label": "exit", 
-        "waitUntilDone": true,
-        "timelineCommand": "Play"
-      }],
-      "mc": "actor"
-    }]
+    "header": "🍦[THEScoup]",
+    "actor": "Scoup"
   },
   "states": [
     {
       "time": "5:52 PM",
-      "handle": "Scoup",
       "mood": {"name": "intro"},
       "gotoNext": true
     },
     {
       "time": "5:53 PM", 
-      "handle": "Scoup", 
       "mood": {"name": "idle", "mood": "+/o🍦"},
       "message": "You made me an ice cream cone?"
     },
     {
-      "time": "5:53 PM", 
-      "handle": "Scoup", 
+      "time": "5:53 PM",  
       "mood": {"name": "idle", "mood": "+🍦[x]/)"},
       "message": "Are you going to melt me or something?"
     },
     {
       "time": "1:53 AM",
-      "handle": "Scoup",
       "mood": {"name": "outro"}
     }
   ]

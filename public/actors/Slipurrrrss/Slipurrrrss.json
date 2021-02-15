@@ -1,0 +1,28 @@
+{
+  "handle": "Slipurrrrss",
+  "type": "basic",
+  "src": "/Slipurrrrss/Slipurrrrss.html",
+  "states": [{
+    "name": "intro",
+    "label": "intro",
+    "waitUntilDone": true,
+    "timelineCommand": "Play"
+  },
+  {
+    "name": "idle",
+    "label": "idle",
+    "timelineCommand": "Play"
+  },
+  {
+    "name":"bounce",
+    "label": "bounce",
+    "timelineCommand": "Play"
+  },
+  {
+    "name": "outro",
+    "label": "exit", 
+    "waitUntilDone": true,
+    "timelineCommand": "Play"
+  }],
+  "mc": "actor"
+},

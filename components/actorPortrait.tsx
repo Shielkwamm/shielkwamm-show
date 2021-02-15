@@ -3,10 +3,13 @@ import styles from './actorPortrait.module.css'
 import classNames from 'classnames'
 import { useEffect } from 'react'
 import BasicActor from './basicActor'
+import AnimateCC, { GetAnimationObjectParameter } from "react-adobe-animate";
+
 
 export default function ActorPortrait({ actorData }) {
   const actorIframe = useRef(null);
   //actorPortrait should never rerender?
+  
   useEffect(() => {
     
     actorIframe.current.onload = function() {
@@ -14,11 +17,12 @@ export default function ActorPortrait({ actorData }) {
     }
   
     const actorInit = () => {
+      
       //const actor = new BasicActor(actorData, actorIframe.current.contentWindow.stage.children[0].actor); // data and m
       //actor.actorLoaded(actorIframe.current.contentWindow.stage.children[0].actor);
-      theSituation.setActorMc(actorData.handle, actorIframe.current.contentWindow.stage.children[0].actor)
+      /*theSituation.setActorMc(actorData.handle, actorIframe.current.contentWindow.stage.children[0].actor)
       actorIframe.current.contentWindow.removeEventListener("actorReady", actorInit);
-      actorIframe.current.contentWindow.addEventListener("actingFinished", actingFinished);
+      actorIframe.current.contentWindow.addEventListener("actingFinished", actingFinished);*/
       theSituation.setActorState(actorData.handle, theSituation.getActorState(actorData.handle).name, true);
       
       const actingFinished = () => {
@@ -31,7 +35,12 @@ export default function ActorPortrait({ actorData }) {
   
   return (
     <>
-    <iframe ref={actorIframe} className={classNames('w-1/4', 'sm:w-1/4', 'md:w-1/3', 'lg:w-1/5', "noUserSelect", "noPointerEvents", styles.actorPortrait)} id="actorPortrait" src={actorData.src}></iframe>
+    <div style={{ width: "400px" }}>
+      <AnimateCC
+        animationName="lishtml5"
+        getAnimationObject={getAnimationObject}
+        paused={paused}
+      />
     </>
   )
 }

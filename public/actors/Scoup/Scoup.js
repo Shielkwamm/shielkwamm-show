@@ -162,17 +162,17 @@ if (reversed == null) { reversed = false; }
 	// timeline functions:
 	this.frame_0 = function() {
 		this.stop();
-		window.dispatchEvent(new Event("actorReady"));
+		this.dispatchEvent(new Event("actorReady"));
 	}
 	this.frame_9 = function() {
-		window.dispatchEvent(new Event("actingFinished"));
+		this.dispatchEvent(new Event("actingFinished"));
 	}
 	this.frame_13 = function() {
 		this.gotoAndPlay("idle");
 	}
 	this.frame_19 = function() {
 		this.stop();
-		window.dispatchEvent(new Event("actingFinished"));
+		this.dispatchEvent(new Event("actingFinished"));
 	}
 
 	// actions tween:
@@ -181,13 +181,13 @@ if (reversed == null) { reversed = false; }
 	// Layer_4
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#000000").s().p("AhNgQQgCgFAFgBQAFgBABAEQAMAhAzgBQAbAAAygLQAFAAABAFQACAFgFAAIhVALQg2AAgNgng");
-	this.shape.setTransform(38.2356,-4.3117,0.8132,0.8132);
+	this.shape.setTransform(38.2348,-4.3119,0.8131,0.8131);
 
 	this.shape_1 = new cjs.Shape();
 	this.shape_1.graphics.f("#000000").s().p("AhVAaQAAgFAFAAQAwgBAogGIAtgJQAcgIgJgTQgCgEAEgDQAFgCACAEQAJATgHAIQgFAIgVAFQhAARhJABQgFAAAAgFg");
-	this.shape_1.setTransform(14.7243,-3.7867,0.8132,0.8132);
+	this.shape_1.setTransform(14.7238,-3.7868,0.8131,0.8131);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_1,p:{x:14.7243,y:-3.7867}},{t:this.shape,p:{x:38.2356,y:-4.3117}}]},1).to({state:[{t:this.shape_1,p:{x:14.7247,y:-4.7865}},{t:this.shape,p:{x:38.2365,y:-5.3116}}]},9).to({state:[{t:this.shape_1,p:{x:14.7247,y:-3.7865}},{t:this.shape,p:{x:38.2365,y:-4.3116}}]},1).to({state:[{t:this.shape_1,p:{x:14.7247,y:-4.2865}},{t:this.shape,p:{x:38.2365,y:-4.8116}}]},1).to({state:[{t:this.shape_1,p:{x:14.4747,y:-4.2865}},{t:this.shape,p:{x:37.9865,y:-4.8116}}]},1).wait(7));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_1,p:{scaleX:0.8131,scaleY:0.8131,x:14.7238,y:-3.7868}},{t:this.shape,p:{scaleX:0.8131,scaleY:0.8131,x:38.2348,y:-4.3119}}]},1).to({state:[{t:this.shape_1,p:{scaleX:0.8132,scaleY:0.8132,x:14.7243,y:-4.7867}},{t:this.shape,p:{scaleX:0.8132,scaleY:0.8132,x:38.2356,y:-5.3117}}]},9).to({state:[{t:this.shape_1,p:{scaleX:0.8132,scaleY:0.8132,x:14.7243,y:-3.7867}},{t:this.shape,p:{scaleX:0.8132,scaleY:0.8132,x:38.2356,y:-4.3117}}]},1).to({state:[{t:this.shape_1,p:{scaleX:0.8132,scaleY:0.8132,x:14.7243,y:-4.2867}},{t:this.shape,p:{scaleX:0.8132,scaleY:0.8132,x:38.2356,y:-4.8117}}]},1).to({state:[{t:this.shape_1,p:{scaleX:0.8132,scaleY:0.8132,x:14.4743,y:-4.2867}},{t:this.shape,p:{scaleX:0.8132,scaleY:0.8132,x:37.9856,y:-4.8117}}]},1).wait(7));
 
 	// Layer_3
 	this.instance = new lib.CachedBmp_1();
@@ -265,7 +265,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 0.00,
 	manifest: [
-		{src:"/TheScoup/images/Scoup_atlas_1.png", id:"Scoup_atlas_1"}
+		{src:"actors/Scoup/images/Scoup_atlas_1.png", id:"Scoup_atlas_1"}
 	],
 	preloads: []
 };
