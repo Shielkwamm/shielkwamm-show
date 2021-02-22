@@ -60,7 +60,7 @@ export default function playback({ state, isLast }) {
 }
 
 export async function getStaticProps(context) {
-  let jsonUrl = "https://shielkwamm.com/theScoup.json";
+  let jsonUrl = "https://raw.githubusercontent.com/Shielkwamm/shielkwamm/master/public/theScoup.json";
   const response = await fetch(jsonUrl);
   let json = await response.json()
   let isLast = context.params?.slug[1] >= json.states.length - 1
@@ -70,7 +70,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  let jsonUrl = "https://shielkwamm.com/theScoup.json";
+  let jsonUrl = "https://raw.githubusercontent.com/Shielkwamm/shielkwamm/master/public/theScoup.json";
   const response = await fetch(jsonUrl);
   let json = await response.json()
 
