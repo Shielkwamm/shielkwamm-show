@@ -2,10 +2,9 @@ import Head from 'next/head'
 import styles from './layout.module.css'
 import Link from 'next/link'
 import classNames from 'classnames'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function Layout({ children }) {
-
   return (
     <>
       <Head>
@@ -15,8 +14,8 @@ export default function Layout({ children }) {
           name="description"
           content="Hello?  I make 10,000 dollars from home a month and you could too!"
         />
-        <script src="https://zimjs.org/cdn/1.3.0/createjs.js"></script>
-        <script src="https://zimjs.org/cdn/10.9.0/zim.js"></script>
+        <script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script>
+        <script src="https://zimjs.org/cdn/cat/03/zim.js"></script>
         <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
       </Head>
       <main>{children}</main>
@@ -26,7 +25,7 @@ export default function Layout({ children }) {
       <div className={classNames(styles.navLeftVertical)}>
         <Link href="/database"><div className={classNames(styles.linkMe, styles.database, "noUserSelect")}>🌈</div></Link>
         <Link href="/best-sh"><div className={classNames(styles.linkMe, styles.bestSh, "noUserSelect")}>💎</div></Link>
-        <Link href="/motd"><div className={classNames(styles.linkMe, styles.motd, "noUserSelect")}>🍦</div></Link>
+        <Link href="/playback/theScoup/0"><div className={classNames(styles.linkMe, styles.motd, "noUserSelect")}>🍦</div></Link>
       </div>
       <div className={classNames(styles.navRight)}>
         <a href="https://guide.shielkwamm.com"><div className={classNames(styles.shielkwammGuide, "noUserSelect")}>⧊</div></a>

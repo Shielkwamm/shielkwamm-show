@@ -1,28 +1,60 @@
 {
   "setup": {
     "name": "theScoup",
+    "room": "#motd^{02/17/21}",
     "header": "🍦[THEScoup]",
-    "actor": "Scoup"
+    "component": "PlaybackHtml",
+    "componentData": {
+      "actors": [
+        {"actor": "Scoup"}
+      ]
+    }
   },
   "states": [
     {
+      "handle": "syst3m",
       "time": "5:52 PM",
-      "mood": {"name": "intro"},
-      "gotoNext": true
+      "mood": "#motd^{02/17/21} <-- Scoup",
+      "message": "Scoup has entered the room.",
+      "playback": {
+        "actor": "Scoup",
+        "name": "intro",
+        "displayMood": false,
+        "displayMessage": false,
+        "gotoNext": true
+      }
     },
     {
+      "handle": "Scoup",
       "time": "5:53 PM", 
-      "mood": {"name": "idle", "mood": "+/o🍦"},
-      "message": "You made me an ice cream cone?"
+      "mood": "+/o🍦",
+      "message": "You made me an ice cream cone?",
+      "playback": {
+        "name": "idle", 
+        "actor": "Scoup"
+      }
     },
     {
+      "handle": "Scoup",
       "time": "5:53 PM",  
-      "mood": {"name": "idle", "mood": "+🍦[x]/)"},
-      "message": "Are you going to melt me or something?"
+      "mood": "+🍦[x]/)",
+      "message": "Are you going to melt me or something?",
+      "playback": {
+        "name": "freeze",
+        "actor": "Scoup"
+      }
     },
     {
+      "handle": "Scoup",
       "time": "1:53 AM",
-      "mood": {"name": "outro"}
+      "mood": "#motd^{02/17/21}.Scoup --> #[]",
+      "message": "Scoup exited the room",
+      "playback": {
+        "actor": "Scoup",
+        "name": "exit",
+        "displayMood": false,
+        "displayMessage": false
+      }
     }
   ]
 }

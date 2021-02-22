@@ -1,5 +1,4 @@
 {
-  "actors": [{
   "handle": "Scoup",
   "type": "basic",
   "src": "/actors/Scoup/Scoup.js",
@@ -21,5 +20,4 @@
     "timelineCommand": "Play"
   }],
   "mc": "actor"
-  }]
 }

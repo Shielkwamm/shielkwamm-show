@@ -19,15 +19,17 @@ export default function Home() {
       let stageH = frame.height;
       stage.update();
       for(let i = 0;i < 5;i++){
-          var label = new Label("🦅")
-            stage.addChild(label);
-            label.x = Math.floor(Math.random() * width);
-            label.y = Math.floor(Math.random() * height);
-            label.size = 100 * Math.random() * 10;
-            label.rotation = Math.floor(Math.random() * 360);
-            label.wiggle("x", label.x, 10, 30, 300, 1000);
-            label.drag()
-          }
+          let eagle = new Label("🦅")
+          eagle.x = Math.floor(Math.random() * width);
+          eagle.y = Math.floor(Math.random() * height);
+          eagle.size = 300 * Math.random() + 50;
+          eagle.rotation = Math.floor(Math.random() * 360);
+          stage.addChild(eagle);
+          eagle.wiggle("y", eagle.y, 10, 30, 3, 1);
+          eagle.drag({slide:true})
+          eagle.addEventListener("slidestart", (e) => {eagle.pauseAnimate()})
+          eagle.addEventListener('slidestop', (e) => {eagle.wiggle("y", eagle.y, 10, 30, 3, 1);})
+        }
     }, 2200)
     return function cleanup() {
       frame.dispose();
