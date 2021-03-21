@@ -45,6 +45,17 @@
       }
     },
     {
+      "handle": "Slipurrrrss",
+      "time": "1:53 AM",
+      "mood": "#[]",
+      "playback": {
+        "actor": "Slipurrrrss",
+        "name": "idle",
+        "displayMood": false,
+        "displayMessage": false
+      }
+    },
+    {
       "handle": "Scoup",
       "time": "1:53 AM",
       "mood": "#motd^{02/17/21}.Scoup --> #[]",

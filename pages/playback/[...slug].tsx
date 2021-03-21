@@ -15,6 +15,7 @@ export default function playback({ state, isLast }) {
   const [animationObject, getAnimationObject] = useState<GetAnimationObjectParameter|null>(null);
   if(actorReady) { 
     animationObject.actor.gotoAndPlay(state.playback.name);
+    console.log(state.playback.name)
   }
   if(animationObject) {
     animationObject.actor.addEventListener("actorReady", function() {
@@ -25,6 +26,8 @@ export default function playback({ state, isLast }) {
     animationObject.actor.addEventListener("actingFinished", function() {console.log("actingFinished")})
   }
 
+  console.log(state.playback.actor)
+
   return (
     <>
     <Head>
@@ -33,7 +36,7 @@ export default function playback({ state, isLast }) {
     <div className={classNames(styles.playback)}>
     <div>
       <AnimateCC
-        animationName="Scoup"
+        animationName={state.playback.actor}
         getAnimationObject={getAnimationObject}
       />
     </div>
@@ -60,7 +63,7 @@ export default function playback({ state, isLast }) {
 }
 
 export async function getStaticProps(context) {
-  let jsonUrl = "https://raw.githubusercontent.com/Shielkwamm/shielkwamm/master/public/theScoup.json";
+  let jsonUrl = "http://localhost:3000/theScoup.json";
   const response = await fetch(jsonUrl);
   let json = await response.json()
   let isLast = context.params?.slug[1] >= json.states.length - 1
@@ -70,7 +73,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  let jsonUrl = "https://raw.githubusercontent.com/Shielkwamm/shielkwamm/master/public/theScoup.json";
+  let jsonUrl = "http://localhost:3000/theScoup.json";
   const response = await fetch(jsonUrl);
   let json = await response.json()
 
