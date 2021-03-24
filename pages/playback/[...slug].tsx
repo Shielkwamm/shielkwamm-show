@@ -39,8 +39,8 @@ export default function playback({ setup, state, isLast }) {
       />
       <div className={classNames(styles.handle)}>{state.handle}</div>
       </div>
-      <div className="flex-1">
-        <div className={classNames("flex justify-between", styles.header)}>
+      <div className="md:flex-1">
+        <div className={classNames("md:flex md:justify-between", styles.header)}>
           <div className={classNames(styles.address)}>{setup.address}</div>
           <div className={classNames(styles.playbackTime)}>{state.time}</div>
         </div>
@@ -50,18 +50,18 @@ export default function playback({ setup, state, isLast }) {
     <hr/>
     <div className={classNames(styles.controls)}>
     {(+query.slug?.[1]-1 >= 0? (
-      <div className={styles.prev}>
-      <Link href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] - 1) }>←</Link>
-      </div>
+      <Link href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] - 1) }>
+        <div className={styles.prev}>←</div>
+      </Link>
     ):null)}
     {!isLast? (
-    <div className={styles.next}>
-      <Link href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] + 1) }>→</Link>
-    </div>
+      <Link href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] + 1) }>
+        <div className={styles.next}>→</div>
+      </Link>
     ) : (
-      <div className={styles.end}>
-        <Link href={"/"}>x</Link>
-      </div>
+      <Link href={"/"}>
+        <div className={styles.end}>x</div>
+      </Link>
     )}
     </div>
     </div>

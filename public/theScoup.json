@@ -14,7 +14,7 @@
     {
       "handle": "syst3m",
       "time": "5:52 PM",
-      "mood": "<-- Scoup",
+      "mood": "#* <-- Scoup",
       "message": "Scoup has entered the room.",
       "playback": {
         "actor": "Scoup",
@@ -47,7 +47,7 @@
     {
       "handle": "Scoup",
       "time": "1:53 AM",
-      "mood": "Scoup --> #[]",
+      "mood": "#* -- Scoup --> #[]",
       "message": "Scoup exited the room",
       "playback": {
         "actor": "Scoup",

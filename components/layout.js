@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       </Head>
       <main>{children}</main>
       <div className={classNames(styles.navLeft)}>
-        <Link href="/"><div className={classNames(styles.linkMe, styles.sheilkwamm, "noUserSelect")}></div></Link>
+        <Link href="/"><div className={classNames(styles.linkMe, styles.shielkwamm, "noUserSelect")}></div></Link>
       </div>
       <div className={classNames(styles.navLeftVertical)}>
         <a href="https://shielkwamm.net"><div className={classNames(styles.linkMe, styles.database, "noUserSelect")}>🌈</div></a>
