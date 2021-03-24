@@ -22,6 +22,7 @@
   position: fixed;
   right: 0;
   bottom: 0;
+  z-index: 666;
 }
 
 .navRight div {
@@ -41,7 +42,7 @@
   font-size: 35px;
   position: fixed;
   bottom: 0;
-  z-index: 666
+  z-index: 666;
 }
 
 .navLeftVertical div{

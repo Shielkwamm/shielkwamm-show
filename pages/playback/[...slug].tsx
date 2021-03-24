@@ -7,7 +7,7 @@ import styles from './[...slug].module.css'
 import classNames from 'classnames'
 import { useState } from 'react'
 
-export default function playback({ state, isLast }) {
+export default function playback({ setup, state, isLast }) {
   let routerProps = useRouter();
   let query = routerProps?.query;
   const [actorReady, setActorReady] = useState(false)
@@ -28,7 +28,7 @@ export default function playback({ state, isLast }) {
   return (
     <>
     <Head>
-      <title>The Scoup</title>
+      <title>{setup.name}</title>
     </Head>
     <div className={classNames(styles.playbackWrapper)}>
     <div className={classNames(styles.playback, "flex")}>
@@ -40,8 +40,11 @@ export default function playback({ state, isLast }) {
       <div className={classNames(styles.handle)}>{state.handle}</div>
       </div>
       <div className="flex-1">
-    <div className={styles.playbackTime}>{state.time}</div>
-    <div className={classNames(styles.message)}>{state.mood}, {state.message}</div>
+        <div className={classNames("flex justify-between", styles.header)}>
+          <div className={classNames(styles.address)}>{setup.address}</div>
+          <div className={classNames(styles.playbackTime)}>{state.time}</div>
+        </div>
+        <div className={classNames(styles.message)}><span className={classNames(styles.mood)}>{state.mood},</span> {state.message}</div>
     </div>
     </div>
     <hr/>
@@ -72,7 +75,7 @@ export async function getStaticProps(context) {
   let json = await response.json()
   let isLast = context.params?.slug[1] >= json.states.length - 1
   return {
-    props: {state: json.states[context.params?.slug[1]], isLast: isLast},
+    props: {setup: json.setup, state: json.states[context.params?.slug[1]], isLast: isLast},
   }
 }
 

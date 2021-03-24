@@ -39,7 +39,14 @@
 .playback .playbackTime {
   color: #447;
   font-size:20px;
-  text-align:right;
+  
+  margin: 3px 10px;
+}
+
+.playback .address {
+  color: #744;
+  font-size: 20px;
+  
   margin: 3px 10px;
 }
 
@@ -56,4 +63,12 @@
 
 .portrait {
   border-right: 1px solid rgb(0,0,0,.2);
+}
+
+.header {
+  background-color:rgb(68, 68, 119, .15);
+}
+
+.mood {
+  color: #447;
 }

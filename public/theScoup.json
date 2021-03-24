@@ -1,7 +1,7 @@
 {
   "setup": {
     "name": "theScoup",
-    "room": "#motd^{02/17/21}",
+    "address": "#motd^{02/17/21}",
     "header": "🍦[THEScoup]",
     "component": "PlaybackHtml",
     "componentData": {
@@ -14,7 +14,7 @@
     {
       "handle": "syst3m",
       "time": "5:52 PM",
-      "mood": "#motd^{02/17/21} <-- Scoup",
+      "mood": "<-- Scoup",
       "message": "Scoup has entered the room.",
       "playback": {
         "actor": "Scoup",
@@ -47,7 +47,7 @@
     {
       "handle": "Scoup",
       "time": "1:53 AM",
-      "mood": "#motd^{02/17/21}.Scoup --> #[]",
+      "mood": "Scoup --> #[]",
       "message": "Scoup exited the room",
       "playback": {
         "actor": "Scoup",
