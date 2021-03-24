@@ -30,30 +30,37 @@ export default function playback({ state, isLast }) {
     <Head>
       <title>The Scoup</title>
     </Head>
-    <div className={classNames(styles.playback)}>
-    <div>
+    <div className={classNames(styles.playbackWrapper)}>
+    <div className={classNames(styles.playback, "flex")}>
+      <div className={classNames(styles.portrait, "flex-initial")}>
       <AnimateCC
         animationName="Scoup"
         getAnimationObject={getAnimationObject}
       />
+      <div className={classNames(styles.handle)}>{state.handle}</div>
+      </div>
+      <div className="flex-1">
+    <div className={styles.playbackTime}>{state.time}</div>
+    <div className={classNames(styles.message)}>{state.mood}, {state.message}</div>
     </div>
-    <div>{state.time} {state.handle}: {state.mood}, {state.message}</div>
     </div>
-    <div className={styles.controls}>
+    <hr/>
+    <div className={classNames(styles.controls)}>
     {(+query.slug?.[1]-1 >= 0? (
       <div className={styles.prev}>
-      <Link href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] - 1) }>Back</Link>
+      <Link href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] - 1) }>←</Link>
       </div>
     ):null)}
     {!isLast? (
     <div className={styles.next}>
-      <Link href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] + 1) }>Next</Link>
+      <Link href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] + 1) }>→</Link>
     </div>
     ) : (
-      <div className={styles.next}>
-        <Link href={"/"}>End</Link>
+      <div className={styles.end}>
+        <Link href={"/"}>x</Link>
       </div>
     )}
+    </div>
     </div>
     </>
   );

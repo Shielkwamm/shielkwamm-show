@@ -24,7 +24,7 @@ export default function Layout({ children }) {
       </div>
       <div className={classNames(styles.navLeftVertical)}>
         <a href="https://shielkwamm.net"><div className={classNames(styles.linkMe, styles.database, "noUserSelect")}>🌈</div></a>
-        <a href="http://database.shielkwamm.com"><div className={classNames(styles.linkMe, styles.bestSh, "noUserSelect")}>💎</div></a>
+        <a href="http://sh.shielkwamm.com"><div className={classNames(styles.linkMe, styles.bestSh, "noUserSelect")}>💎</div></a>
         <Link href="/playback/theScoup/0"><div className={classNames(styles.linkMe, styles.motd, "noUserSelect")}>🍦</div></Link>
       </div>
       <div className={classNames(styles.navRight)}>
