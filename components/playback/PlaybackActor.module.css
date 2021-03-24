@@ -1,0 +1,12 @@
+.portrait {
+  border-right: 1px solid rgb(0,0,0,.2);
+}
+
+.mood {
+  color: #447;
+}
+
+.portraitMeta div {
+  text-align:center;
+  color: #447;
+}

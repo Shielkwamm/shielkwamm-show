@@ -1,0 +1,27 @@
+.playback .playbackTime {
+  color: #447;
+  font-size:20px;
+  
+  padding: 3px 10px;
+}
+
+.playback .address {
+  color: #744;
+  font-size: 20px;
+  
+  margin: 3px 10px;
+}
+
+.header {
+  background-color:rgb(68, 68, 119, .15);
+}
+
+.header div {
+  padding: 5px 10px;
+}
+
+.closeButton {
+  background-color: rgb(211, 211, 211, .8);
+  width: 30px;
+  cursor: pointer;
+}
