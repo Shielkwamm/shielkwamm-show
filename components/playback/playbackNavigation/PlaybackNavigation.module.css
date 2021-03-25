@@ -1,0 +1,8 @@
+.navigationButton {
+  font-size:30px;
+  background-color: rgb(211, 211, 211, .8);
+  padding: 0 17px;
+  color: #447;
+  font-weight: 900;
+  cursor: pointer;
+}

@@ -1,17 +1,15 @@
 import styles from './Playback.module.css'
 import classNames from 'classnames'
-import PlaybackActor from './PlaybackActor'
-import PlaybackHeader from './PlaybackHeader'
-import PlaybackNavigation from './PlaybackNavigation'
-import PlaybackMessages from './PlaybackMessages'
+import PlaybackActor from './playbackActor/PlaybackActor'
+import PlaybackHeader from './playbackHeader/PlaybackHeader'
+import PlaybackNavigation from './playbackNavigation/PlaybackNavigation'
+import PlaybackMessage from './playbackMessage/PlaybackMessage'
 
 const Playback = ({ setup, state, isLast, query }) => (
   <div className={classNames(styles.playbackWrapper)}>
     <PlaybackHeader setup={setup} state={state} />
-    <div className={classNames(styles.playback)}>
-      <PlaybackActor setup={setup} state={state}/>
-      <PlaybackMessages setup={setup} state={state} />
-    </div>
+    <PlaybackActor setup={setup} state={state}/>
+    <PlaybackMessage setup={setup} state={state} />
     <hr/>
     <PlaybackNavigation setup={setup} state={state} query={query} isLast={isLast}/>
   </div>
