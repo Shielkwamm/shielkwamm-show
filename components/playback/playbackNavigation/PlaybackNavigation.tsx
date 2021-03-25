@@ -15,9 +15,11 @@ export default PlaybackNavigation;
 const PlaybackNavigationPrevious = ({ query }) => (
   <>
     {(+query.slug?.[1]-1 >= 0? (
-      <Link scroll={false} href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] - 1) }>
-        <div className={styles.navigationButton}>{"<--"}</div>
-      </Link>
+      <div className="noDrag">
+        <Link scroll={false} href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] - 1) }>
+          <div className={styles.navigationButton}>{"<--"}</div>
+        </Link>
+      </div>
     ):null)}
   </>
 )
@@ -25,13 +27,17 @@ const PlaybackNavigationPrevious = ({ query }) => (
 const PlaybackNavigationNext = ({ query, isLast}) => (
   <>
   {!isLast? (
-    <Link scroll={false} href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] + 1) }>
-      <div className={styles.navigationButton}>{"-->"}</div>
-    </Link>
+    <div className="noDrag">
+      <Link scroll={false} href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] + 1) }>
+        <div className={styles.navigationButton}>{"-->"}</div>
+      </Link>
+    </div>
   ) : (
-    <Link href={"/"}>
-      <div className={styles.navigationButton}>{"--> #[]"}</div>
-    </Link>
+    <div className="noDrag">
+      <Link href={"/"}>
+        <div className={styles.navigationButton}>{"--> #[]"}</div>
+      </Link>
+    </div>
   )}
   </>
 )
