@@ -1,29 +1,22 @@
-import { useState } from 'react'
-import AnimateCC, { GetAnimationObjectParameter } from "react-adobe-animate"
+import Head from 'next/head'
+import dynamic from 'next/dynamic'
 
-const Ship = ({ label }) => {
-  const [actorReady, setActorReady] = useState(false)
-  const [animationObject, getAnimationObject] = useState<GetAnimationObjectParameter|null>(null);
-  if(actorReady) { 
-    console.log("ship ready")
-    //animationObject.actor.gotoAndPlay();
-  }
-  if(animationObject) {
-    console.log("animation object?")
-    animationObject.addEventListener("actorReady", function() {
-      setActorReady(true);
-    })
-  }
-  return (
+const ShipNoSSR = dynamic(
+  () => import('./ShipAnimate'),
+  { ssr: false }
+)
+//<ShipNoSSR />
+const Ship = ({ label }) => (
+  <>
+    <Head>
+      <script src="/Ship/Ship.js" type="text/javascript"></script>
+    </Head>
     <div className="fixed w-full h-full flex justify-center inset-0" >
       <div className="w-5/12 h-5/12 lg:w-2/12 lg:h-2/12 self-center">
-      <AnimateCC
-        animationName="Ship"
-        getAnimationObject={getAnimationObject}
-      />
+        
       </div>
     </div>
-  )
-}
+  </>
+)
 
 export default Ship;

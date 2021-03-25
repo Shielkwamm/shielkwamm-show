@@ -5,10 +5,8 @@ const ZimBig = () => {
   useEffect(()=> {
     if(didMountRef.current) {
       //don't rerender
-      console.log("rerender")
     }
     else {
-      console.log("render")
       const scaling = "full"; // this will resize to fit inside the screen dimensions
       const width = 1024;
       const height = 768;

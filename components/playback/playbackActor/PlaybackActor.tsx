@@ -1,34 +1,33 @@
-import { useState } from 'react'
-import AnimateCC, { GetAnimationObjectParameter } from "react-adobe-animate"
-import styles from './PlaybackActor.module.css'
-import classNames from 'classnames'
+import Head from 'next/head'
+//import PlaybackActorPortrait from './PlaybackActorPortrait';
+import PlaybackActorMeta from './PlaybackActorMeta';
+import dynamic from 'next/dynamic'
+
+const ActorPortraitNoSSR = dynamic(
+  () => import('./PlaybackActorPortrait'),
+  { ssr: false }
+)
 
 const PlaybackActor = ({ setup, state }) => {
-  const [actorReady, setActorReady] = useState(false)
-
-  const [animationObject, getAnimationObject] = useState<GetAnimationObjectParameter|null>(null);
-  if(actorReady) { 
-    animationObject.actor.gotoAndPlay(state.playback.name);
-  }
-  if(animationObject) {
-    animationObject.actor.addEventListener("actorReady", function() {
-      setActorReady(true);
-    })
-  }
+  const animationSource = `/actors/$actorName/${state.playback.actor}.js`;
   return (
+    <>
+    <Head>
+      <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
+    </Head>
     <div className="w-full sm:w-3/12 inline-block">
       <div className="w-1/2 sm:w-full lg:w-9/12 mx-auto">
-        <AnimateCC
-          animationName="Scoup"
-          getAnimationObject={getAnimationObject}
-        />
+        <ActorPortraitNoSSR state={state}/>
       </div>
-      <div className={classNames(styles.portraitMeta)}>
-        <div className={classNames(styles.handle)}>{state.handle}</div>
-        <div className={classNames(styles.mood)}>{state.mood}</div>
-      </div>
+      <PlaybackActorMeta state={state}/>
     </div>
+    </>
   )
 }
 
 export default PlaybackActor;
+
+/* Head doesn't load properly
+
+
+*/

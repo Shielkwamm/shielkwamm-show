@@ -17,12 +17,24 @@ export default function playback({ setup, state, isLast }) {
 }
 
 export async function getStaticProps(context) {
-  let jsonUrl = "https://raw.githubusercontent.com/Shielkwamm/shielkwamm/master/public/theScoup.json";
+  const jsonUrl = "https://raw.githubusercontent.com/Shielkwamm/shielkwamm/master/public/theScoup.json"; //"http://localhost:3000/theScoup.json";
   const response = await fetch(jsonUrl);
-  let json = await response.json()
-  let isLast = context.params?.slug[1] >= json.states.length - 1
+  const json = await response.json();
+
+  const state = json.states[context.params?.slug[1]];
+  const isLast = context.params?.slug[1] >= json.states.length - 1;
+
+  //const actorJsonUrl = "https://state.playback.actor";
+  //const actorJson = await fetch(jsonUrl);
+  
+
   return {
-    props: {setup: json.setup, state: json.states[context.params?.slug[1]], isLast: isLast},
+    props: {
+      //actorSetup: actorJson.setup;
+      setup: json.setup,
+      state: state,
+      isLast: isLast
+    },
   }
 }
 
