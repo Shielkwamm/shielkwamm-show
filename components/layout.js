@@ -3,6 +3,7 @@ import styles from './layout.module.css'
 import Link from 'next/link'
 import classNames from 'classnames'
 import React, { useEffect } from 'react'
+import Scene from './scene/scene'
 
 export default function Layout({ children }) {
   return (
@@ -32,6 +33,7 @@ export default function Layout({ children }) {
         <a href="https://acktueli.com"><div className={classNames(styles.acktueli, "noUserSelect")}>◫</div></a>
         <a href="https://github.com/orgs/Shielkwamm/projects"><div className={classNames(styles.shielkwammGithub, "noUserSelect")}>📷</div></a>
       </div>
+      <Scene />
     </>
   )
 }
