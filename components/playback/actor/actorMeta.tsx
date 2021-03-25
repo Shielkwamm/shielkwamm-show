@@ -1,4 +1,4 @@
-import styles from './PlaybackActor.module.css'
+import styles from './actor.module.css'
 import classNames from 'classnames'
 
 const PlaybackActorMeta = ({ state }) => (

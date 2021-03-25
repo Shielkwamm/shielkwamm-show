@@ -3,7 +3,7 @@ import styles from './layout.module.css'
 import Link from 'next/link'
 import classNames from 'classnames'
 import React, { useEffect } from 'react'
-import Scene from './scenes/eagle/scene'
+import Scene from './scenes/scene'
 
 export default function Layout({ children }) {
   return (

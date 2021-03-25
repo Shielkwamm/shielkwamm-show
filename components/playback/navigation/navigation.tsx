@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import Link from 'next/link'
-import styles from './PlaybackNavigation.module.css'
+import styles from './navigation.module.css'
 
 const PlaybackNavigation = ({ setup, state, query, isLast }) => (
   <div className={classNames(styles.controls, "flex justify-content")}>

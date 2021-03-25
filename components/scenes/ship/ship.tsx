@@ -2,7 +2,7 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 
 const ShipNoSSR = dynamic(
-  () => import('./ShipAnimate'),
+  () => import('./shipAnimate'),
   { ssr: false }
 )
 //<ShipNoSSR />

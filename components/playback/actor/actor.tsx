@@ -1,10 +1,10 @@
 import Head from 'next/head'
 //import PlaybackActorPortrait from './PlaybackActorPortrait';
-import PlaybackActorMeta from './PlaybackActorMeta';
+import PlaybackActorMeta from './actorMeta';
 import dynamic from 'next/dynamic'
 
 const ActorPortraitNoSSR = dynamic(
-  () => import('./PlaybackActorPortrait'),
+  () => import('./actorPortrait'),
   { ssr: false }
 )
 

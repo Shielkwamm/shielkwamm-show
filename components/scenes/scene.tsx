@@ -1,5 +1,5 @@
-import ZimEagles from './zimEagles'
-import Ship from '../ship/ship'
+import ZimEagles from './eagle/zimEagles'
+import Ship from './ship/ship'
 
 const Scene = () => (
   <>

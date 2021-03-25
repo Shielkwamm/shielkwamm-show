@@ -1,4 +1,4 @@
-import PlaybackCloseButton from './PlaybackCloseButton'
+import PlaybackCloseButton from './closeButton'
 
 const PlaybackHeader = ({ setup, state }) => (
   <div className="playback-header flex justify-between bg-gray-900 bg-opacity-10">

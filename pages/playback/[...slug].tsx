@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head';
-import Playback from '../../components/playback/Playback';
+import Playback from '../../components/playback/playback';
 
 export default function playback({ setup, state, isLast }) {
   let routerProps = useRouter();
