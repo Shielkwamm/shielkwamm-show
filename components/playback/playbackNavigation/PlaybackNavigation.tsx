@@ -15,7 +15,7 @@ export default PlaybackNavigation;
 const PlaybackNavigationPrevious = ({ query }) => (
   <>
     {(+query.slug?.[1]-1 >= 0? (
-      <Link href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] - 1) }>
+      <Link scroll={false} href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] - 1) }>
         <div className={styles.navigationButton}>{"<--"}</div>
       </Link>
     ):null)}
@@ -25,7 +25,7 @@ const PlaybackNavigationPrevious = ({ query }) => (
 const PlaybackNavigationNext = ({ query, isLast}) => (
   <>
   {!isLast? (
-    <Link href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] + 1) }>
+    <Link scroll={false} href={"/playback/" + "theScoup" + "/" + (+query.slug?.[1] + 1) }>
       <div className={styles.navigationButton}>{"-->"}</div>
     </Link>
   ) : (
