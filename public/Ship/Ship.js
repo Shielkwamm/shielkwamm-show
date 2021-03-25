@@ -114,7 +114,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 0.00,
 	manifest: [
-		{src:"images/Ship_atlas_.png?1590559631165", id:"Ship_atlas_"}
+		{src:"/Ship/images/Ship_atlas_.png?1590559631165", id:"Ship_atlas_"}
 	],
 	preloads: []
 };

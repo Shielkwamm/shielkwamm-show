@@ -3,7 +3,7 @@ import styles from './layout.module.css'
 import Link from 'next/link'
 import classNames from 'classnames'
 import React, { useEffect } from 'react'
-import Scene from './scene/scene'
+import Scene from './scenes/eagle/scene'
 
 export default function Layout({ children }) {
   return (
@@ -18,6 +18,7 @@ export default function Layout({ children }) {
         <script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script>
         <script src="https://zimjs.org/cdn/cat/03/zim.js"></script>
         <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
+        <script src="/Ship/Ship.js" type="text/javascript"></script>
       </Head>
       <main>{children}</main>
       <div className={classNames(styles.navLeft)}>
