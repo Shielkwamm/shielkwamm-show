@@ -1,27 +1,7 @@
-.acktueli {
-  cursor: crosshair;
-}
-
-.linkMe {
-  cursor: grabbing;
-  display: relative;
-  z-index: 666;
-}
-
-.shielkwammGuide  {
-  cursor: grab;
-}
-
-.navLeft {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-}
-
 .navRight {
   position: fixed;
   right: 0;
-  bottom: 0;
+  top: 0;
   z-index: 666;
 }
 
@@ -31,21 +11,5 @@
   font-size: 45px;
   display: relative;
   z-index: 666;
-}
-
-.navRight .shielkwammGithub {
-  font-size: 40px;
-}
-
-.navLeftVertical {
-  width: 66px;
-  font-size: 35px;
-  position: fixed;
-  bottom: 0;
-  z-index: 666;
-}
-
-.navLeftVertical div{
-  text-align: center;
-  height: 66px;
+  cursor: grab;
 }

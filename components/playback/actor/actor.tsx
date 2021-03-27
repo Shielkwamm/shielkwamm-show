@@ -13,7 +13,7 @@ const PlaybackActor = ({ setup, state }) => {
   return (
     <>
     <Head>
-      <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
+      
     </Head>
     <div className="w-full sm:w-3/12 inline-block">
       <div className="w-1/2 sm:w-full lg:w-9/12 mx-auto">
@@ -28,6 +28,6 @@ const PlaybackActor = ({ setup, state }) => {
 export default PlaybackActor;
 
 /* Head doesn't load properly
-
+<script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
 
 */
