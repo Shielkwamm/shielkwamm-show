@@ -8,7 +8,6 @@ import Draggable, {DraggableCore} from 'react-draggable'
 import { Resizable } from 're-resizable';
 
 const Playback = ({ setup, state, isLast, query }) => (
-  
   <Draggable cancel=".noDrag">
     <div className={classNames(styles.playbackWrapper)}>
     <PlaybackHeader setup={setup} state={state} />
