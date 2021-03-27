@@ -20,12 +20,14 @@ export default function Layout({ children }) {
         <script src="https://zimjs.org/cdn/cat/03/zim.js"></script>
         <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
       </Head>
-      <main>{children}</main>
       <div className={classNames(styles.navRight)}>
         <Link href="/playback/theScoup/0"><div className={classNames(styles.linkMe, styles.motd, "noUserSelect")}>🍦</div></Link>
       </div>
       <Scene/>
-      <NavBar/>
+      <div style={{zIndex: 667}} className="fixed flex w-full h-full">
+        <main className="flex-grow">{children}</main>
+        <NavBar/>
+      </div>
     </>
   )
 }

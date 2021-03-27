@@ -9,7 +9,6 @@ const PlaybackNavigation = ({ setup, state, query, isLast }) => {
 
   const handleNavigation = useCallback(
     event => {
-      console.log("c'mon")
       const keyName = event.key;
       switch(keyName) {
         case "ArrowLeft":
