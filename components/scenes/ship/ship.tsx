@@ -11,7 +11,7 @@ const Ship = ({ label }) => (
     <Head>
       <script src="/Ship/Ship.js" type="text/javascript"></script>
     </Head>
-    <div className="fixed w-full h-full flex justify-center inset-0" >
+    <div style={{zIndex: 1}} className="fixed w-full h-full flex justify-center inset-0" >
       <div className="w-5/12 h-5/12 lg:w-2/12 lg:h-2/12 self-center">
         <ShipNoSSR/>
       </div>

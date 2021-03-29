@@ -26,7 +26,7 @@ export default function Layout({ children }) {
         <script src="https://zimjs.org/cdn/cat/03/zim.js"></script>
         <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
       </Head>
-      <div style={{zIndex: 3}} className="absolute inset-0">
+      <div style={{zIndex: 3}} className="absolute">
         <Link href="/playback/theScoup/0"><div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">🍦</div></Link>
       </div>
       <div style={{zIndex: 1}} className="absolute inset-0">

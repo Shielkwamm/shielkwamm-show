@@ -15,6 +15,7 @@ const ZimBig = () => {
 
       const frame = new Frame(scaling, width, height, color, outerColor);
       frame.on("ready", () => { // ES6 Arrow Function - like function(){}
+        frame.canvas.style.zIndex = 2;
         var interval
         const stage = frame.stage;
         let stageW = frame.width;
