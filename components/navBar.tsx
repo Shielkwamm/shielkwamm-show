@@ -4,10 +4,9 @@ const NavBar = () => {
   const ship = "( { ship } )";
   const sh = "△";
   const router = useRouter();
-  console.log(router.query, router.pathname);
   return (
     <div>
-      <div className="border border-indigo-600 bottom-0 right-0 w-400 h-full text-4xl text-center flex flex-col justify-between bg-pink-300 bg-opacity-75">
+      <div style={{zIndex: 668}} className="fixed border border-indigo-600 bottom-0 right-0 w-14 h-full text-4xl text-center flex flex-col justify-between bg-pink-300 bg-opacity-75">
         <div className="flex-none grid grid-col-1 space-y-2.5">
           <a href="https://guide.shielkwamm.com">⧊</a>
           <a href="https://acktueli.com">◫</a>

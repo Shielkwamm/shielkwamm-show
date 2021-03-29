@@ -3,8 +3,12 @@ import Ship from './ship/ship'
 
 const Scene = () => (
   <>
-    <Ship label="down"/>
-    <ZimEagles />
+    <div style={{zIndex: 1}}>
+      <Ship label="down"/>
+    </div>
+    <div style={{zIndex: 4}}> 
+      <ZimEagles />
+    </div>
   </>
 )
 

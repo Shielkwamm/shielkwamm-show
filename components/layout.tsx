@@ -5,8 +5,14 @@ import classNames from 'classnames'
 import React, { useEffect } from 'react'
 import NavBar from './navBar'
 import Scene from './scenes/scene'
+import { useRouter } from 'next/router'
 
 export default function Layout({ children }) {
+  const routerProps = useRouter();
+  let zIndex = 1;
+  if(routerProps.pathname !== "/") {
+    zIndex = 4;
+  }
   return (
     <>
       <Head>
@@ -20,14 +26,16 @@ export default function Layout({ children }) {
         <script src="https://zimjs.org/cdn/cat/03/zim.js"></script>
         <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
       </Head>
-      <div className={classNames(styles.navRight)}>
-        <Link href="/playback/theScoup/0"><div className={classNames(styles.linkMe, styles.motd, "noUserSelect")}>🍦</div></Link>
+      <div style={{zIndex: 3}} className="absolute inset-0">
+        <Link href="/playback/theScoup/0"><div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">🍦</div></Link>
       </div>
-      <Scene/>
-      <div style={{zIndex: 667}} className="fixed flex w-full h-full">
-        <main className="flex-grow">{children}</main>
-        <NavBar/>
+      <div style={{zIndex: 1}} className="absolute inset-0">
+        <Scene/>
       </div>
+      <div style={{zIndex: zIndex, height: "100%", width: "calc(100% - 55px)"}} className="absolute inset-0">
+        {children}
+      </div>
+      <NavBar/>
     </>
   )
 }
