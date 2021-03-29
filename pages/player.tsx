@@ -3,7 +3,7 @@ import ShWindow from '../components/shUI/window';
 
 const Player = () => (
   <ShWindow left={"Marble Madness"} right={"↑↑⬤"}>
-    <ReactPlayer url='https://www.youtube.com/watch?v=HxAYJdLXgZo' />
+    <ReactPlayer width="100%" url='https://www.youtube.com/watch?v=HxAYJdLXgZo' />
   </ShWindow>
 )
 
