@@ -6,6 +6,7 @@ import React, { useEffect } from 'react'
 import NavBar from './navBar'
 import Scene from './scenes/scene'
 import { useRouter } from 'next/router'
+import AnimatedText from './animatedText/animatedText'
 
 export default function Layout({ children }) {
   const routerProps = useRouter();
@@ -13,10 +14,13 @@ export default function Layout({ children }) {
   if(routerProps.pathname !== "/") {
     zIndex = 4;
   }
+  const mediaName = "↑↑⬤ Marble Madness";
+  const currentSh = ">=== Sh.ielkwamm ===";
+  const currentRoom = "#percent20";
   return (
     <>
       <Head>
-        <title>=== Sh.ielkwamm ===</title>
+        <title>{currentSh}</title>
         <link rel="icon" href="/favicon_io/favicon.ico" />
         <meta
           name="description"
@@ -26,14 +30,24 @@ export default function Layout({ children }) {
         <script src="https://zimjs.org/cdn/cat/03/zim.js"></script>
         <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
       </Head>
-      <div style={{zIndex: 3}} className="absolute">
-        <Link href="/playback/theScoup/0"><div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">🍦</div></Link>
+      <div style={{zIndex: 2}} className="absolute px-2 text-purple-800">
+        <div>{currentRoom}</div>
+      </div>
+      <div style={{zIndex: 3, top: "25px"}} className="absolute">
+        <Link href="/playback/theScoup/0">
+          <div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">
+            <AnimatedText text="[ {🍦} ], [{{🍦}}], [  🍦  ]" />
+          </div>
+        </Link>
       </div>
       <div style={{zIndex: 1}} className="absolute inset-0">
         <Scene/>
       </div>
       <div style={{zIndex: zIndex, height: "100%", width: "calc(100% - 55px)"}} className="absolute inset-0">
         {children}
+      </div>
+      <div style={{zIndex: 3, bottom: 0, left: 0}} className="absolute">
+        <Link href="/player">{mediaName}</Link>
       </div>
       <NavBar/>
     </>

@@ -22,7 +22,8 @@
     "react-adobe-animate": "^2.5.0",
     "react-dom": "^17.0.1",
     "react-draggable": "^4.4.3",
-    "react-ga": "^3.3.0"
+    "react-ga": "^3.3.0",
+    "react-player": "^2.9.0"
   },
   "devDependencies": {
     "@types/node": "^14.0.5",

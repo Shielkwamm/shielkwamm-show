@@ -15,7 +15,7 @@ const NavBar = () => {
           {router.pathname === "/ship" ? <a href="/">{sh}</a>: <a href="/ship">{ship}</a>}
         </div>
         <div className="flex-none grid grid-col-1 space-y-4">
-          <a href="http://sh.shielkwamm.com">🥚</a>
+          <a href="https://sh.shielkwamm.com">🥚</a>
           <a href="https://shielkwamm.net">🦀</a>
           <a href="https://github.com/orgs/Shielkwamm/projects">📷</a>
         </div>
