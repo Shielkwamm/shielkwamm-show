@@ -1,10 +1,15 @@
-import ZimEagles from './zimEagles'
 import Ship from '../ship/ship'
+import dynamic from 'next/dynamic'
+
+const ZimEaglesNoSSR = dynamic(
+  () => import('./zimEagles'),
+  { ssr: false }
+)
 
 const Scene = () => (
   <>
     <Ship label="down"/>
-    <ZimEagles />
+    <ZimEaglesNoSSR />
   </>
 )
 

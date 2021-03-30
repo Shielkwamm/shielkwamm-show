@@ -5,16 +5,15 @@ import { useEffect } from 'react';
 import { initGA, logPageView } from '../utils/analytics';
 
 import { ApolloProvider } from "@apollo/client";
-import { useApollo } from "../lib/apolloClient";
+import client from "../apollo-client";
 
 export default function App({ Component, pageProps }) {
-  const apolloClient = useApollo(pageProps.initialApolloState);
   useEffect(() => {
     initGA()
     logPageView()
   });
   return (
-    <ApolloProvider client={apolloClient}>
+    <ApolloProvider client={client}>
     <Layout>
       <Component {...pageProps} />
     </Layout>
