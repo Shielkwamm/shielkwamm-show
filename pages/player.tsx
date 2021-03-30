@@ -2,6 +2,7 @@ import ReactPlayer from 'react-player'
 import ShWindow from '../components/shUI/window';
 import { gql, useQuery } from '@apollo/client';
 import ClientOnly from '../components/clientOnly';
+import Head from 'next/head';
 
 const Player = () => {
   const { data, loading, error } = useQuery(getActiveRoom, {
@@ -13,11 +14,20 @@ const Player = () => {
   }) 
   const currentRoom = data?.room?.result || null;
   return (
+    <>
+    <Head>
+      <title>=== Shielkwamm.media ===</title>
+      <meta
+        name="description"
+        content="What does a === Shielkwamm === sound like?"
+      />
+    </Head>
     <ShWindow left={currentRoom?.currentMusicTitle} right={"↑↑⬤"}>
       <ClientOnly>
         <ReactPlayer width="100%" url={currentRoom?.currentMusicUrl} />
       </ClientOnly>
     </ShWindow>
+    </>
   )
 }
 

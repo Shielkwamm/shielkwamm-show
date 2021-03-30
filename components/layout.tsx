@@ -41,8 +41,8 @@ export default function Layout({ children }) {
         <script src="https://zimjs.org/cdn/cat/03/zim.js"></script>
         <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
       </Head>
-      <div style={{zIndex: 2}} className="absolute px-2 text-purple-800">
-        <div><a href={`http://sh.shielkwamm.com/room/{currentRoom?.slug}`}>#{currentRoom?.name}</a></div>
+      <div style={{zIndex: 3}} className="absolute px-2 text-purple-800">
+        <div><a href={`https://sh.shielkwamm.com/room/${currentRoom?.slug}`}>#{currentRoom?.name}</a></div>
       </div>
       <div style={{zIndex: 3, top: "25px"}} className="absolute">
         <Link href="/playback/theScoup/0">
@@ -58,7 +58,7 @@ export default function Layout({ children }) {
         {children}
       </div>
       <div style={{zIndex: 3, bottom: 0, left: 0}} className="absolute">
-        <Link href="/player"><div>{currentRoom?.vibe} {currentRoom?.currentMusicTitle}</div></Link>
+        <Link href="/player"><div className="cursor-pointer">{currentRoom?.vibe} {currentRoom?.currentMusicTitle}</div></Link>
       </div>
       <NavBar/>
     </>
