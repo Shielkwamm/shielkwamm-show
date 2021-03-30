@@ -7,6 +7,8 @@ import NavBar from './navBar'
 import Scene from './scenes/scene'
 import { useRouter } from 'next/router'
 import AnimatedText from './animatedText/animatedText'
+import { gql, useQuery } from '@apollo/client';
+import { useState } from 'react';
 
 export default function Layout({ children }) {
   const routerProps = useRouter();
@@ -14,9 +16,18 @@ export default function Layout({ children }) {
   if(routerProps.pathname !== "/") {
     zIndex = 4;
   }
-  const mediaName = "↑↑⬤ Marble Madness";
+
+  const { data, loading, error } = useQuery(getActiveRoom, {
+    variables: {
+      roomInput: {
+        filter: {isFeatured: {_eq: true}}
+      }
+    }
+  }) 
+
+  const currentRoom = data?.room?.result || null;
+  
   const currentSh = ">=== Sh.ielkwamm ===";
-  const currentRoom = "#percent20";
   return (
     <>
       <Head>
@@ -31,7 +42,7 @@ export default function Layout({ children }) {
         <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
       </Head>
       <div style={{zIndex: 2}} className="absolute px-2 text-purple-800">
-        <div>{currentRoom}</div>
+        <div><a href={`http://sh.shielkwamm.com/room/{currentRoom?.slug}`}>#{currentRoom?.name}</a></div>
       </div>
       <div style={{zIndex: 3, top: "25px"}} className="absolute">
         <Link href="/playback/theScoup/0">
@@ -47,7 +58,7 @@ export default function Layout({ children }) {
         {children}
       </div>
       <div style={{zIndex: 3, bottom: 0, left: 0}} className="absolute">
-        <Link href="/player">{mediaName}</Link>
+        <Link href="/player"><div>{currentRoom?.vibe} {currentRoom?.currentMusicTitle}</div></Link>
       </div>
       <NavBar/>
     </>
@@ -59,3 +70,21 @@ export default function Layout({ children }) {
 const HudContext = React.createContext({burgerPhonesOpen: false})
 HudContext.displayName = "HudContext"
 
+const getActiveRoom = gql `query ActiveRoom($roomInput: SingleRoomInput!) {
+  room(input: $roomInput) {
+    result {
+      name
+      bwam
+      vibe
+      currentMusicTitle
+      currentMusicUrl
+      slug
+      colorScheme {
+        backgroundColor
+        color
+        linkColor
+        altColor
+      }
+    }
+  } 
+}`
