@@ -13,7 +13,7 @@ import ClientOnly from '../components/clientOnly';
 
 export default function Layout({ children }) {
   const routerProps = useRouter();
-  let zIndex = 1;
+  let zIndex = 2;
   if(routerProps.pathname !== "/") {
     zIndex = 4;
   }
