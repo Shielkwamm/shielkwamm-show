@@ -47,7 +47,7 @@ export default function Layout({ children }) {
       <div style={{zIndex: 3, top: "25px"}} className="absolute">
         <Link href="/playback/theScoup/0">
           <div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">
-            <AnimatedText text="[ {🍦} ], [{{🍦}}], [  🍦  ]" />
+          🍦
           </div>
         </Link>
       </div>
@@ -88,3 +88,5 @@ const getActiveRoom = gql `query ActiveRoom($roomInput: SingleRoomInput!) {
     }
   } 
 }`
+
+//<AnimatedText text="[ {🍦} ], [{{🍦}}], [  🍦  ]" />
