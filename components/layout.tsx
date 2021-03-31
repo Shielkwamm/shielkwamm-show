@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import AnimatedText from './animatedText/animatedText'
 import { gql, useQuery } from '@apollo/client';
 import { useState } from 'react';
+import ClientOnly from '../components/clientOnly';
 
 export default function Layout({ children }) {
   const routerProps = useRouter();
@@ -41,9 +42,12 @@ export default function Layout({ children }) {
         <script src="https://zimjs.org/cdn/cat/03/zim.js"></script>
         <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
       </Head>
+      <ClientOnly>
+      {!loading? (
       <div style={{zIndex: 3}} className="absolute px-2 text-purple-800">
-        <div><a href={`https://sh.shielkwamm.com/room/${currentRoom?.slug}`}>#{currentRoom?.name}</a></div>
-      </div>
+        <div><a href={`https://sh.shielkwamm.com/room/${currentRoom?.slug}`}>&#35;{currentRoom?.name}</a></div>
+      </div> ) : null }
+      </ClientOnly>
       <div style={{zIndex: 3, top: "25px"}} className="absolute">
         <Link href="/playback/theScoup/0">
           <div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">
@@ -57,9 +61,13 @@ export default function Layout({ children }) {
       <div style={{zIndex: zIndex, height: "100%", width: "calc(100% - 55px)"}} className="absolute inset-0">
         {children}
       </div>
+      <ClientOnly>
+        {!loading? (
       <div style={{zIndex: 3, bottom: 0, left: 0}} className="absolute">
         <Link href="/player"><div className="cursor-pointer">{currentRoom?.vibe} {currentRoom?.currentMusicTitle}</div></Link>
       </div>
+        ): null}
+      </ClientOnly>
       <NavBar/>
     </>
   )
