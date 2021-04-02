@@ -14,6 +14,10 @@ const LiveStream = () => {
         name="description"
         content="=== Shielkwamm 1 year anniversary ==="
       />
+      <meta property="og:title" content="=== Shielkwamm 1 year anniversary ===" />
+      <meta property="og:url" content="https://shielkwamm.com/live-stream" />
+      <meta property="og:image" content="https://github.com/Shielkwamm/shielkwamm/raw/master/public/bg.png" />
+      <meta property="og:description" content="[+🎥] --> +△" />
     </Head>
     <ShWindow left={"Live Stream"} right={"+☴"}>
       <ClientOnly>
