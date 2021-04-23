@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const ZimBig = () => {
+const ZimEagles = () => {
   const didMountRef = useRef(false);
   useEffect(()=> {
     if(didMountRef.current) {
@@ -44,4 +44,4 @@ const ZimBig = () => {
   return null;
 }
 
-export default ZimBig
+export default ZimEagles

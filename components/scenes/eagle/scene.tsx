@@ -1,4 +1,4 @@
-import Ship from '../ship/ship'
+import Ship from '../percent20/ship/ship'
 import dynamic from 'next/dynamic'
 
 const ZimEaglesNoSSR = dynamic(

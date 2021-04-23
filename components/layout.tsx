@@ -18,7 +18,7 @@ export default function Layout({ children }) {
     zIndex = 4;
   }
 
-  const { data, loading, error } = useQuery(getActiveRoom, {
+  const { data, loading, error } = useQuery(getFeaturedRoom, {
     variables: {
       roomInput: {
         filter: {isFeatured: {_eq: true}}
@@ -58,7 +58,7 @@ export default function Layout({ children }) {
         <div><a href={`https://sh.shielkwamm.com/room/${currentRoom?.slug}`}>&#35;{currentRoom?.name}</a></div>
       </div> ) : null }
       </ClientOnly>
-      <div style={{display: "none", zIndex: 3, top: "25px"}} className="absolute">
+      <div style={{zIndex: 3, top: "25px"}} className="absolute">
         <Link href="/playback/theScoup/0">
           <div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">
           🍦
@@ -88,7 +88,7 @@ export default function Layout({ children }) {
 const HudContext = React.createContext({burgerPhonesOpen: false})
 HudContext.displayName = "HudContext"
 
-const getActiveRoom = gql `query ActiveRoom($roomInput: SingleRoomInput!) {
+const getFeaturedRoom = gql `query FeaturedRoom($roomInput: SingleRoomInput!) {
   room(input: $roomInput) {
     result {
       name
