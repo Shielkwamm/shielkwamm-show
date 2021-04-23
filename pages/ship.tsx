@@ -24,7 +24,7 @@ const ShipPage = () => {
 export default ShipPage;
 
 export async function getStaticProps(context) {
-  const jsonUrl = "https://raw.githubusercontent.com/Shielkwamm/shielkwamm/master/public/percent20.json"; //"http://localhost:3000/theScoup.json";
+  const jsonUrl = "https://raw.githubusercontent.com/Shielkwamm/shielkwamm-show/main/public/percent20.json"; //"http://localhost:3000/theScoup.json";
   const response = await fetch(jsonUrl);
   const json = await response.json();
 

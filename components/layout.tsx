@@ -44,7 +44,7 @@ export default function Layout({ children }) {
         <meta property="og:title" content="=== Shíélkwámm ===" />
         <meta property="og:description" content="Stuck in percent20... again... still..." />
         <meta property="og:url" content="https://shielkwamm.com/live-stream" />
-        <meta property="og:image" content="https://github.com/Shielkwamm/shielkwamm/raw/master/public/bg.png" />
+        <meta property="og:image" content="https://github.com/Shielkwamm/shielkwamm-show/raw/main/public/bg.png" />
       </Head>
       <ClientOnly>
       {!loading? (
