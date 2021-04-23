@@ -1,14 +1,9 @@
-import ZimEagles from './eagle/zimEagles'
-import Ship from './ship/ship'
+import ZimLLololl from './llololl/zimLlololl'
+import LlolollScene from './llololl/scene'
 
 const Scene = () => (
   <>
-    <div style={{zIndex: 1}}>
-      <Ship label="down"/>
-    </div>
-    <div style={{zIndex: 4}}> 
-      <ZimEagles />
-    </div>
+    <LlolollScene/>
   </>
 )
 

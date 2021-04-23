@@ -34,13 +34,19 @@ export default function Layout({ children }) {
       <Head>
         <title>{currentSh}</title>
         <link rel="icon" href="/favicon_io/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon_io/favicon.ico"></link>
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png"></link>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png"></link>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png"></link>
+        <link rel="manifest" href="/favicon_io/site.webmanifest"></link>
         <meta
           name="description"
           content="Hello?  I make 10,000 dollars from home a month and you could too!"
         />
         <script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script>
         <script src="https://zimjs.org/cdn/cat/03/zim.js"></script>
-        <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>
+        <script src="https://zimjs.org/cdn/pizzazz_01.js"></script>
+        <script src="/actors/Scoup/Scoup.js" type="text/javascript"></script>   
         <meta property="og:title" content="=== Shíélkwámm ===" />
         <meta property="og:description" content="Stuck in percent20... again... still..." />
         <meta property="og:url" content="https://shielkwamm.com/live-stream" />
@@ -52,7 +58,7 @@ export default function Layout({ children }) {
         <div><a href={`https://sh.shielkwamm.com/room/${currentRoom?.slug}`}>&#35;{currentRoom?.name}</a></div>
       </div> ) : null }
       </ClientOnly>
-      <div style={{zIndex: 3, top: "25px"}} className="absolute">
+      <div style={{display: "none", zIndex: 3, top: "25px"}} className="absolute">
         <Link href="/playback/theScoup/0">
           <div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">
           🍦

@@ -22,7 +22,7 @@ const Player = () => {
         content="What does a === Shielkwamm === sound like?"
       />
     </Head>
-    <ShWindow left={currentRoom?.currentMusicTitle} right={"↑↑⬤"}>
+    <ShWindow left={currentRoom?.currentMusicTitle} right={currentRoom?.vibe}>
       <ClientOnly>
         <ReactPlayer width="100%" url={currentRoom?.currentMusicUrl} />
       </ClientOnly>
