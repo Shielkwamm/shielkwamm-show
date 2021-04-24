@@ -25,7 +25,6 @@ export default function Layout({ children }) {
       }
     }
   }) 
-
   const currentRoom = data?.room?.result || null;
   
   const currentSh = ">=== Sh.ielkwamm ===";
@@ -94,6 +93,7 @@ const getFeaturedRoom = gql `query FeaturedRoom($roomInput: SingleRoomInput!) {
       name
       bwam
       vibe
+      isFeatured
       currentMusicTitle
       currentMusicUrl
       slug

@@ -1,15 +1,10 @@
-import Ship from '../percent20/ship/ship'
-import dynamic from 'next/dynamic'
-
-const ZimEaglesNoSSR = dynamic(
-  () => import('./zimEagles'),
-  { ssr: false }
-)
+import Ship from '../ship/ship'
+import ZimRandomGlyphs from '../zim/zimRandomGlyphs';
 
 const Scene = () => (
   <>
     <Ship label="down"/>
-    <ZimEaglesNoSSR />
+    <ZimRandomGlyphs glyphsList={["🦅", "💩", "✨"]} amount="20" maxSize="350"/>
   </>
 )
 

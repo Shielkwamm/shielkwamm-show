@@ -21,7 +21,7 @@ const ZimEagles = () => {
         let stageW = frame.width;
         let stageH = frame.height;
         stage.update();
-        for(let i = 0;i < 5;i++){
+        for(let i = 0;i < 5;i++) {
             let eagle = new Label("🦅")
             eagle.x = Math.floor(Math.random() * width);
             eagle.y = Math.floor(Math.random() * height);
@@ -44,4 +44,4 @@ const ZimEagles = () => {
   return null;
 }
 
-export default ZimEagles
+export default ZimEagles;
