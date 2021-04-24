@@ -46,7 +46,7 @@ const AnimatedTextText = ({ animatedText }) => {
     startTimer();
   }, []);
   return (
-    <h1>{textState.text}</h1>
+    <pre>{textState.text}</pre>
   )
 }
 
