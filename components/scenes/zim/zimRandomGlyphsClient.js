@@ -34,7 +34,7 @@ const ZimRandomGlyphsClient = ({ glyphsList, amount = 5, zIndex = 2, minSize = 5
         emitter.drag()
         emitter.dragStarter()*/
         stage.addChild(emitter)
-        emitter.drag();
+        new MotionController(emitter, "mousemove", 200); 
         for(let i = 0;i < amount;i++) {
           let randomGlyph = glyphsList[Math.floor(Math.random() * glyphsList.length)];
           let glyph = new Label(randomGlyph)
