@@ -17,7 +17,7 @@ export default function playback({ setup, state, isLast }) {
 }
 
 export async function getStaticProps(context) {
-  const jsonUrl = "https://raw.githubusercontent.com/Shielkwamm/shielkwamm-show/main/public/theScoup.json"; //"http://localhost:3000/theScoup.json";
+  const jsonUrl = "https://shielkwamm.s3.us-east-2.amazonaws.com/show/theScoup.json"; //"http://localhost:3000/theScoup.json";
   const response = await fetch(jsonUrl);
   const json = await response.json();
 
@@ -39,7 +39,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  let jsonUrl = "https://raw.githubusercontent.com/Shielkwamm/shielkwamm-show/main/public/theScoup.json";
+  let jsonUrl = "https://shielkwamm.s3.us-east-2.amazonaws.com/show/theScoup.json";
   const response = await fetch(jsonUrl);
   let json = await response.json()
 
