@@ -1377,9 +1377,9 @@ get-orientation@1.1.2:
     stream-parser "^0.3.1"
 
 glob-parent@~5.1.0:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.1.tgz#b6c1ef417c4e5663ea498f1c45afac6916bbc229"
-  integrity sha512-FnI+VGOpnlGHWZxthPGR+QhR78fuiK0sNLkHQv+bL9fQi57lNNdquIbna/WrfROrolq8GK5Ek6BiMwqL/voRYQ==
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.2.tgz#869832c58034fe68a4093c17dc15e8340d8401c4"
+  integrity sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==
   dependencies:
     is-glob "^4.0.1"
 
@@ -3087,6 +3087,11 @@ shell-quote@1.7.2:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.7.2.tgz#67a7d02c76c9da24f99d20808fcaded0e0e04be2"
   integrity sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
+
+shielkwamm@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/shielkwamm/-/shielkwamm-0.1.0.tgz#bb2874cd136518ad0254fd1ba2dc6fa8b09ee4e8"
+  integrity sha512-2LSux2b6cf34o/jFTmOANd/x+3DqACYtu+vwj9BUAEygA9z2BXmflXLIx0OoTsfF7FZZlRMtZbSuyH909cLnxA==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
