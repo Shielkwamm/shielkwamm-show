@@ -24,10 +24,16 @@ const ZimRandomGlyphsClient = ({ glyphsList, amount = 5, zIndex = 2, minSize = 5
         
         addEmitter(glyphsList, stage);
         addEmitter(glyphsList, stage);
-
         for(let i = 0;i < amount;i++) {
           let randomGlyph = glyphsList[Math.floor(Math.random() * glyphsList.length)];
-          let glyph = new Label(randomGlyph)
+          let neobii = Math.floor(Math.random() * 2);
+          let color = neobii? "white":"black";
+          console.log(color)
+          let glyph = new Label({
+            text: randomGlyph,
+            color: color
+          });
+          
           glyph.x = Math.floor(Math.random() * width);
           glyph.y = Math.floor(Math.random() * height);
           glyph.size = maxSize * Math.random() + minSize;

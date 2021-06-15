@@ -12,6 +12,13 @@ import { useState } from 'react';
 import ClientOnly from '../components/clientOnly';
 
 export default function Layout({ children }) {
+  const settings = {
+    hasShip: false,
+    hasNarrarator: false,
+    hasComm: false,
+    hasVibe: false,
+    hasShell: false
+  }
   const routerProps = useRouter();
   let zIndex = 2;
   if(routerProps.pathname !== "/") {
@@ -45,23 +52,23 @@ export default function Layout({ children }) {
         <script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script>
         <script src="https://zimjs.org/cdn/cat/04/zim.js"></script>
         <script src="https://zimjs.org/cdn/pizzazz_01.js"></script>
-        <script src="https://rawcdn.githack.com/nextapps-de/winbox/0.2.0/dist/winbox.bundle.js"></script>
-        {/*<script src="https://shielkwamm.s3.us-east-2.amazonaws.com/show/actors/Scoup/Scoup.js" type="text/javascript"></script>   --> */}}
+        {/*<script src="https://shielkwamm.s3.us-east-2.amazonaws.com/show/actors/Scoup/Scoup.js" type="text/javascript"></script>   --> */}
         <script src="/actors/Name/Name.js" type="text/javascript"></script> 
         <meta property="og:title" content="=== Shíélkwámm ===" />
         <meta property="og:description" content="Stuck in percent20... again... still..." />
         <meta property="og:url" content="https://shielkwamm.com/live-stream" />
         <meta property="og:image" content="https://shielkwamm.s3.us-east-2.amazonaws.com/show/bg.png" />
+        
       </Head>
-      <ClientOnly>
-        <WinBoxz/>
-      </ClientOnly>
+      {settings.hasShell? (
       <ClientOnly>
       {!loading? (
       <div style={{zIndex: 3}} className="absolute px-2 text-purple-800">
         <div><a href={`https://sh.shielkwamm.com/room/${currentRoom?.slug}`}>&#35;{currentRoom?.name}</a></div>
       </div> ) : null }
       </ClientOnly>
+      ): null}
+      {settings.hasComm? (
       <div style={{zIndex: 3, top: "25px"}} className="absolute">
         <Link href="/playback/theScoup/0">
           <div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">
@@ -69,6 +76,7 @@ export default function Layout({ children }) {
           </div>
         </Link>
       </div>
+      ): null}
       <div style={{zIndex: 1}} className="absolute inset-0">
         <Scene/>
       </div>
@@ -76,13 +84,20 @@ export default function Layout({ children }) {
         {children}
       </div>
       <ClientOnly>
+      {settings.hasVibe? (
+        <>
         {!loading? (
       <div style={{zIndex: 3, bottom: 0, left: 0}} className="absolute">
         <Link href="/player"><div className="cursor-pointer">{currentRoom?.vibe} {currentRoom?.currentMusicTitle}</div></Link>
       </div>
         ): null}
+        </>
+      ): null }
       </ClientOnly>
-      <NavBar/>
+      {settings.hasShip? (
+        <NavBar/>
+      ): null}
+      
     </>
   )
 }
@@ -114,20 +129,37 @@ const getFeaturedRoom = gql `query FeaturedRoom($roomInput: SingleRoomInput!) {
 
 //
 
-const WinBoxz = ({ currentRoom }) => {
+/*const WinBoxz = ({ currentRoom = false }) => {
   let wb;
   useEffect(() => {
-    wb = new WinBox({
-      title: "yay",
-      html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/gj0Rz-uP4Mk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    });
-    wb.resize("50%", "50%")
-      .move("center", "center");
+    const script = document.createElement('script');
+
+    script.src = "https://rawcdn.githack.com/nextapps-de/winbox/0.2.0/dist/winbox.bundle.js";
+    script.async = true;
+  
+    document.body.appendChild(script);
+    script.onload = function () {
+      wb = new WinBox({
+        title: "See the big picture.",
+        html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kTn0li1q1O0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        root: document.body
+      });
+      wb.resize("50%", "50%")
+        .move("center", "center");
+    }
+
     return () => {
       wb.close(true)
+      document.body.removeChild(script);
     }
   })
   return (
     null
   )
 }
+*/
+/*
+<ClientOnly>
+        <WinBoxz currentRoom={currentRoom}/>
+      </ClientOnly>
+      */

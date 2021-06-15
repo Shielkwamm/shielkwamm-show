@@ -1,8 +1,10 @@
 import ZimRandomGlyphs from '../zim/zimRandomGlyphs';
+import ZimRandomText from '../zim/zimRandomText';
+import ClientOnly from '../../clientOnly';
 
 const Scene = () => (
   <>
-    <ZimRandomGlyphs glyphsList={["⬛", "◾", "⚪"]} amount="20" maxSize="350"/>
+    <ZimRandomGlyphs glyphsList={["ⓚ", "⬛", "ℙ", "⬜", "ʎ", "▲", "⚪", "⋗", "Ḵ", '℟']} amount="77" maxSize="350"/>
   </>
 )
 
