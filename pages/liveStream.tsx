@@ -16,6 +16,7 @@ const LiveStream = () => {
       />
       <meta property="og:title" content="=== Shielkwamm 1 year anniversary ===" />
       <meta property="og:url" content="https://shielkwamm.com/live-stream" />
+      <link rel="stylesheet" href="dist/css/winbox.min.css"></link>
       <meta property="og:image" content="https://github.com/Shielkwamm/shielkwamm-show/raw/main/public/bg.png" />
       <meta property="og:description" content="[+🎥] --> +△" />
     </Head>

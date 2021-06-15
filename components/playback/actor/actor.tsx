@@ -9,7 +9,8 @@ const ActorPortraitNoSSR = dynamic(
 )
 
 const PlaybackActor = ({ setup, state }) => {
-  const animationSource = `/actors/$actorName/${state.playback.actor}.js`;
+  //const animationSource = `/actors/$actorName/${state.playback.actor}.js`;
+  const animationSource = `/actors/Name/Name.js`;
   return (
     <>
     <Head>

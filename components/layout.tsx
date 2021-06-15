@@ -45,13 +45,17 @@ export default function Layout({ children }) {
         <script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script>
         <script src="https://zimjs.org/cdn/cat/04/zim.js"></script>
         <script src="https://zimjs.org/cdn/pizzazz_01.js"></script>
-        <script src="https://shielkwamm.s3.us-east-2.amazonaws.com/show/actors/Scoup/Scoup.js" type="text/javascript"></script>   
+        <script src="https://rawcdn.githack.com/nextapps-de/winbox/0.2.0/dist/winbox.bundle.js"></script>
+        {/*<script src="https://shielkwamm.s3.us-east-2.amazonaws.com/show/actors/Scoup/Scoup.js" type="text/javascript"></script>   --> */}}
         <script src="/actors/Name/Name.js" type="text/javascript"></script> 
         <meta property="og:title" content="=== Shíélkwámm ===" />
         <meta property="og:description" content="Stuck in percent20... again... still..." />
         <meta property="og:url" content="https://shielkwamm.com/live-stream" />
         <meta property="og:image" content="https://shielkwamm.s3.us-east-2.amazonaws.com/show/bg.png" />
       </Head>
+      <ClientOnly>
+        <WinBoxz/>
+      </ClientOnly>
       <ClientOnly>
       {!loading? (
       <div style={{zIndex: 3}} className="absolute px-2 text-purple-800">
@@ -109,3 +113,21 @@ const getFeaturedRoom = gql `query FeaturedRoom($roomInput: SingleRoomInput!) {
 }`
 
 //
+
+const WinBoxz = ({ currentRoom }) => {
+  let wb;
+  useEffect(() => {
+    wb = new WinBox({
+      title: "yay",
+      html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/gj0Rz-uP4Mk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    });
+    wb.resize("50%", "50%")
+      .move("center", "center");
+    return () => {
+      wb.close(true)
+    }
+  })
+  return (
+    null
+  )
+}
