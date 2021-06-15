@@ -1,0 +1,23 @@
+{
+  "handle": "Name",
+  "type": "basic",
+  "src": "https://shielkwamm.s3.us-east-2.amazonaws.com/show/actors/Name/Name.js",
+  "states": [{
+    "name": "intro",
+    "label": "intro",
+    "waitUntilDone": true,
+    "timelineCommand": "Play"
+  },
+  {
+    "name": "idle",
+    "label": "idle",
+    "timelineCommand": "Play"
+  },
+  {
+    "name": "outro",
+    "label": "exit", 
+    "waitUntilDone": true,
+    "timelineCommand": "Play"
+  }],
+  "mc": "actor"
+}
