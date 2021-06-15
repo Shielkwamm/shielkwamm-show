@@ -1,6 +1,6 @@
 import ZimLLololl from './llololl/zimLlololl'
 import LlolollScene from './llololl/scene'
-import Scenez from './eagle/scene';
+import Scenez from './static/static';
 
 const Scene = () => (
   <>

@@ -9,9 +9,12 @@ body {
   font-family: Tahoma, sans-serif;
   line-height: 1.6;
   font-size: 18px;
-  background-image: url("https://shielkwamm.s3.us-east-2.amazonaws.com/show/bg.png");
+  background-image: url("https://shielkwamm.s3.us-east-2.amazonaws.com/show/Shielkwamm/images/Shielkwamm_atlas_.png");
   background-position-x: 0;
   animation: bgAnimate 1000s linear infinite;
+}
+.oldBody { 
+  background-image: url("https://shielkwamm.s3.us-east-2.amazonaws.com/show/bg.png");
 }
 iframe {
   border: 0;

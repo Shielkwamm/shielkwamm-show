@@ -21,20 +21,10 @@ const ZimRandomGlyphsClient = ({ glyphsList, amount = 5, zIndex = 2, minSize = 5
         let stageW = frame.width;
         let stageH = frame.height;
         stage.update();
-        var emitter = new zim.Emitter({
-          obj: [new Label("💩")],
-          force: 11,
-          gravity: .2
-        })
-          .centerReg()
-          .sca(7)
+        
+        addEmitter(glyphsList, stage);
+        addEmitter(glyphsList, stage);
 
-        /*emitter.x = mouse.cursor.x
-        emitter.y = mouse.cursor.y
-        emitter.drag()
-        emitter.dragStarter()*/
-        stage.addChild(emitter)
-        new MotionController(emitter, "mousemove", 200); 
         for(let i = 0;i < amount;i++) {
           let randomGlyph = glyphsList[Math.floor(Math.random() * glyphsList.length)];
           let glyph = new Label(randomGlyph)
@@ -57,6 +47,19 @@ const ZimRandomGlyphsClient = ({ glyphsList, amount = 5, zIndex = 2, minSize = 5
     }
   });
   return null;
+}
+
+function addEmitter(glyphsList, stage) {
+  let randomGlyph = glyphsList[Math.floor(Math.random() * glyphsList.length)];      
+  var emitter = new zim.Emitter({
+    obj: [new Label(randomGlyph)],
+    force: 3,
+    gravity: .6
+  })
+    .centerReg()
+    .sca(7)
+  stage.addChild(emitter)
+  new MotionController(emitter, "mousemove", 200); 
 }
 
 export default ZimRandomGlyphsClient;
