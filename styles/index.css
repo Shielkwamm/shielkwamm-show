@@ -3,16 +3,7 @@
 @tailwind utilities;
 
 
-body {
-  padding: 0;
-  margin: 0;
-  font-family: Tahoma, sans-serif;
-  line-height: 1.6;
-  font-size: 18px;
-  background-image: url("https://shielkwamm.s3.us-east-2.amazonaws.com/show/Shielkwamm/images/Shielkwamm_atlas_.png");
-  background-position-x: 0;
-  animation: bgAnimate 1000s linear infinite;
-}
+
 .oldBody { 
   background-image: url("https://shielkwamm.s3.us-east-2.amazonaws.com/show/bg.png");
 }
@@ -23,6 +14,14 @@ iframe {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Tahoma, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
 }
 
 @keyframes bgAnimate {

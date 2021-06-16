@@ -33,16 +33,16 @@ const ZimRandomGlyphsClient = ({ glyphsList, amount = 5, zIndex = 2, minSize = 5
             text: randomGlyph,
             color: color
           });
-          
-          glyph.x = Math.floor(Math.random() * width);
-          glyph.y = Math.floor(Math.random() * height);
-          glyph.size = maxSize * Math.random() + minSize;
+          glyph.x = Math.floor(Math.random() * stageW);
+          glyph.y = Math.floor(Math.random() * stageH);
+          const dampen = stageW / 700;
+          glyph.size = maxSize * Math.random() + (minSize * dampen);
           glyph.rotation = Math.floor(Math.random() * 360);
           stage.addChild(glyph);
           glyph.wiggle("y", glyph.y, 10, 30, 3, 1);
           glyph.drag({slide:true})
           glyph.addEventListener("slidestart", (e) => {glyph.pauseAnimate()})
-          glyph.addEventListener('slidestop', (e) => {glyph.wiggle("y", glyph.y, 10, 30, 3, 1);})
+          glyph.addEventListener('slidestop', (e) => {glyph.wiggle("y", glyph.y, 5, 5, 3, 1);})
         }
       }, 2200)
       didMountRef.current = true;
@@ -63,7 +63,7 @@ function addEmitter(glyphsList, stage) {
     gravity: .6
   })
     .centerReg()
-    .sca(7)
+    .sca(5)
   stage.addChild(emitter)
   new MotionController(emitter, "mousemove", 200); 
 }

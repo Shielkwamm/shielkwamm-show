@@ -13,11 +13,28 @@ import ClientOnly from '../components/clientOnly';
 
 export default function Layout({ children }) {
   const settings = {
-    hasShip: false,
-    hasNarrarator: false,
-    hasComm: false,
-    hasVibe: false,
-    hasShell: false
+    style: {
+      backgroundImage: "https://shielkwamm.s3.us-east-2.amazonaws.com/show/Shielkwamm/images/Shielkwamm_atlas_.png"
+    },
+    ship: {
+      hasShip: false,
+      hasNarrarator: false,
+      hasComm: false,
+      hasVibe: false,
+      hasShell: false
+    },
+    meta: {
+      bgImage: "https://shielkwamm.s3.us-east-2.amazonaws.com/show/bg.png",
+      description: "Stuck in percent20... again... still...",
+      ogDescription: "Hello?  I make 10,000 dollars from home a month and you could too!",
+      ogImage: "https://shielkwamm.s3.us-east-2.amazonaws.com/show/bg.png"
+    },
+    scenes: {
+      zimRandomGlyphs: {
+        glyphSet: ["ⓚ", "⬛", "ℙ", "⬜", "ʎ", "▲", "⚪", "⋗", "Ḵ", '℟'],
+        colors: ["white", "black"]
+      }
+    }
   }
   const routerProps = useRouter();
   let zIndex = 2;
@@ -31,7 +48,8 @@ export default function Layout({ children }) {
         filter: {isFeatured: {_eq: true}}
       }
     }
-  }) 
+  })
+  
   const currentRoom = data?.room?.result || null;
   
   const currentSh = ">=== Sh.ielkwamm ===";
@@ -47,20 +65,27 @@ export default function Layout({ children }) {
         <link rel="manifest" href="/favicon_io/site.webmanifest"></link>
         <meta
           name="description"
-          content="Hello?  I make 10,000 dollars from home a month and you could too!"
+          content={settings.meta.description}
         />
         <script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script>
         <script src="https://zimjs.org/cdn/cat/04/zim.js"></script>
         <script src="https://zimjs.org/cdn/pizzazz_01.js"></script>
         {/*<script src="https://shielkwamm.s3.us-east-2.amazonaws.com/show/actors/Scoup/Scoup.js" type="text/javascript"></script>   --> */}
         <script src="/actors/Name/Name.js" type="text/javascript"></script> 
-        <meta property="og:title" content="=== Shíélkwámm ===" />
-        <meta property="og:description" content="Stuck in percent20... again... still..." />
-        <meta property="og:url" content="https://shielkwamm.com/live-stream" />
-        <meta property="og:image" content="https://shielkwamm.s3.us-east-2.amazonaws.com/show/bg.png" />
+        <meta property="og:title" content={currentSh}/>
+        <meta property="og:description" content={settings.meta.ogDescription} />
+        <meta property="og:image" content={settings.meta.ogImage}/>
         
       </Head>
-      {settings.hasShell? (
+      <style jsx global>{`
+        body {
+          background-image: url(${settings.style.backgroundImage});
+          background-position-x: 0;
+          animation: bgAnimate 1000s linear infinite;
+        }`
+      }</style>
+      
+      {settings.ship.hasShell? (
       <ClientOnly>
       {!loading? (
       <div style={{zIndex: 3}} className="absolute px-2 text-purple-800">
@@ -68,7 +93,7 @@ export default function Layout({ children }) {
       </div> ) : null }
       </ClientOnly>
       ): null}
-      {settings.hasComm? (
+      {settings.ship.hasComm? (
       <div style={{zIndex: 3, top: "25px"}} className="absolute">
         <Link href="/playback/theScoup/0">
           <div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">
@@ -84,7 +109,7 @@ export default function Layout({ children }) {
         {children}
       </div>
       <ClientOnly>
-      {settings.hasVibe? (
+      {settings.ship.hasVibe? (
         <>
         {!loading? (
       <div style={{zIndex: 3, bottom: 0, left: 0}} className="absolute">
@@ -94,7 +119,7 @@ export default function Layout({ children }) {
         </>
       ): null }
       </ClientOnly>
-      {settings.hasShip? (
+      {settings.ship.hasShip? (
         <NavBar/>
       ): null}
       
