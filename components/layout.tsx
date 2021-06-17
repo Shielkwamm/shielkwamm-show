@@ -11,17 +11,25 @@ import { gql, useQuery } from '@apollo/client';
 import { useState } from 'react';
 import ClientOnly from '../components/clientOnly';
 
+import ProperShell from './proper/shell'
+
 export default function Layout({ children }) {
-  const settings = {
-    style: {
-      backgroundImage: "https://shielkwamm.s3.us-east-2.amazonaws.com/show/Shielkwamm/images/Shielkwamm_atlas_.png"
+  const proper = {
+    ship: null,
+    narrator: {
+      profile: "Neobii"
     },
-    ship: {
-      hasShip: false,
-      hasNarrarator: false,
-      hasComm: false,
-      hasVibe: false,
-      hasShell: false
+    comm: {
+      shellVisible: false,
+      shipVisible: false,
+      narratorVisible: false,
+      pinnedVisible: false,
+      vibeVisible: false,
+      rootUrl: "https://shielkwamm.com/",
+    },
+    vibe: null,
+    shell: {
+      rootUrl: "https://sh.shielkwamm.com/"
     },
     meta: {
       bgImage: "https://shielkwamm.s3.us-east-2.amazonaws.com/show/bg.png",
@@ -29,13 +37,14 @@ export default function Layout({ children }) {
       ogDescription: "Hello?  I make 10,000 dollars from home a month and you could too!",
       ogImage: "https://shielkwamm.s3.us-east-2.amazonaws.com/show/bg.png"
     },
-    scenes: {
-      zimRandomGlyphs: {
-        glyphSet: ["ⓚ", "⬛", "ℙ", "⬜", "ʎ", "▲", "⚪", "⋗", "Ḵ", '℟'],
-        colors: ["white", "black"]
-      }
+    style: {
+      backgroundImage: "https://shielkwamm.s3.us-east-2.amazonaws.com/show/Shielkwamm/images/Shielkwamm_atlas_.png"
+    },
+    hero: {
+      src: '/actors/Name/Name.js'
     }
   }
+
   const routerProps = useRouter();
   let zIndex = 2;
   if(routerProps.pathname !== "/") {
@@ -65,51 +74,53 @@ export default function Layout({ children }) {
         <link rel="manifest" href="/favicon_io/site.webmanifest"></link>
         <meta
           name="description"
-          content={settings.meta.description}
+          content={proper.meta.description}
         />
         <script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script>
         <script src="https://zimjs.org/cdn/cat/04/zim.js"></script>
         <script src="https://zimjs.org/cdn/pizzazz_01.js"></script>
         {/*<script src="https://shielkwamm.s3.us-east-2.amazonaws.com/show/actors/Scoup/Scoup.js" type="text/javascript"></script>   --> */}
-        <script src="/actors/Name/Name.js" type="text/javascript"></script> 
+        <script src={proper.hero.src} type="text/javascript"></script> 
         <meta property="og:title" content={currentSh}/>
-        <meta property="og:description" content={settings.meta.ogDescription} />
-        <meta property="og:image" content={settings.meta.ogImage}/>
+        <meta property="og:description" content={proper.meta.ogDescription} />
+        <meta property="og:image" content={proper.meta.ogImage}/>
         
       </Head>
       <style jsx global>{`
         body {
-          background-image: url(${settings.style.backgroundImage});
+          background-image: url(${proper.style.backgroundImage});
           background-position-x: 0;
           animation: bgAnimate 1000s linear infinite;
         }`
-      }</style>
-      
-      {settings.ship.hasShell? (
-      <ClientOnly>
-      {!loading? (
-      <div style={{zIndex: 3}} className="absolute px-2 text-purple-800">
-        <div><a href={`https://sh.shielkwamm.com/room/${currentRoom?.slug}`}>&#35;{currentRoom?.name}</a></div>
-      </div> ) : null }
-      </ClientOnly>
+      }
+      </style>
+
+      {proper.shell && proper.comm?.shellVisible ? (
+        <ProperShell loading={loading} zIndex={3} currentRoom={currentRoom} proper={proper}/>
       ): null}
-      {settings.ship.hasComm? (
-      <div style={{zIndex: 3, top: "25px"}} className="absolute">
-        <Link href="/playback/theScoup/0">
-          <div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">
-          <AnimatedText text="[ {🍦} ], [{{🍦}}], [  🍦  ]" />
-          </div>
-        </Link>
-      </div>
+
+      {proper.comm && proper.comm?.pinnedVisible? (// 5x6
+        <div style={{zIndex: 3, top: "25px"}} className="absolute">
+          <Link href="/playback/theScoup/0">
+            <div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">
+            <AnimatedText text="[ {🍦} ], [{{🍦}}], [  🍦  ]" />
+            </div>
+          </Link>
+        </div>
       ): null}
+
+
       <div style={{zIndex: 1}} className="absolute inset-0">
         <Scene/>
       </div>
+
+
+
       <div style={{zIndex: zIndex, height: "100%", width: "calc(100% - 55px)"}} className="absolute inset-0">
         {children}
       </div>
       <ClientOnly>
-      {settings.ship.hasVibe? (
+      {proper.vibe && proper.comm?.vibeVisible? (
         <>
         {!loading? (
       <div style={{zIndex: 3, bottom: 0, left: 0}} className="absolute">
@@ -119,7 +130,7 @@ export default function Layout({ children }) {
         </>
       ): null }
       </ClientOnly>
-      {settings.ship.hasShip? (
+      {proper.ship && proper.comm.shipVisible? (
         <NavBar/>
       ): null}
       
