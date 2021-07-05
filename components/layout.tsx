@@ -52,7 +52,7 @@ export default function Layout({ children }) {
       </Head>
       <style jsx global>{`
         body {
-          
+          background-image: url(https://i5.walmartimages.com/asr/45377c89-09a9-4c6f-acd0-15118720f060.e8262abba0f18a7bb8b5edb41cb2b5f0.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff);
           background-position-x: 0;
           animation: bgAnimate 1000s linear infinite;
         }`
@@ -105,5 +105,5 @@ export default function Layout({ children }) {
   )
 }
 
-
+//https://i5.walmartimages.com/asr/45377c89-09a9-4c6f-acd0-15118720f060.e8262abba0f18a7bb8b5edb41cb2b5f0.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff
 //<-- background-image: url(${show.style.backgroundImage}); -->
