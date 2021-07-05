@@ -21,7 +21,7 @@ const Comm = () => {
     <>
       <style jsx global>{`
         body {
-          background-image: url(${comm.style.backgroundImage});
+          
           background-position-x: 0;
           animation: bgAnimate 1000s linear infinite;
         }`
@@ -32,3 +32,5 @@ const Comm = () => {
 }
 
 export default Comm;
+
+//background-image: url(${comm.style.backgroundImage});

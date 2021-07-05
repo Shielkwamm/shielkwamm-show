@@ -38,25 +38,26 @@ export default function Layout({ children }) {
         <link rel="manifest" href="/favicon_io/site.webmanifest"></link>
         <meta
           name="description"
-          content={show.meta.description}
+          content={show?.meta?.description}
         />
         <script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script>
         <script src="https://zimjs.org/cdn/cat/04/zim.js"></script>
         <script src="https://zimjs.org/cdn/pizzazz_01.js"></script>
         {/*<script src="https://shielkwamm.s3.us-east-2.amazonaws.com/show/actors/Scoup/Scoup.js" type="text/javascript"></script>   --> */}
-        <script src={proper.hero.src} type="text/javascript"></script> 
+        <script src={proper?.hero?.src} type="text/javascript"></script> 
         <meta property="og:title" content={currentSh}/>
-        <meta property="og:description" content={show.meta.ogDescription} />
-        <meta property="og:image" content={show.meta.ogImage}/>
+        <meta property="og:description" content={show?.meta?.ogDescription} />
+        <meta property="og:image" content={show?.meta?.ogImage}/>
         
       </Head>
       <style jsx global>{`
         body {
-          background-image: url(${show.style.backgroundImage});
+          
           background-position-x: 0;
           animation: bgAnimate 1000s linear infinite;
         }`
       }
+      
       </style>
 
       {proper.shell && show.shellVisible ? (
@@ -103,3 +104,6 @@ export default function Layout({ children }) {
     </>
   )
 }
+
+
+//<-- background-image: url(${show.style.backgroundImage}); -->

@@ -4,7 +4,7 @@ import ClientOnly from '../../clientOnly';
 
 const Scene = () => (
   <>
-    <ZimRandomGlyphs glyphsList={["ⓚ", "⬛", "ℙ", "⬜", "ʎ", "▲", "⚪", "⋗", "Ḵ", '℟']} amount="77" maxSize="350"/>
+    <ZimRandomGlyphs glyphsList={["🌭", "🍔", "🧱", "🌊", "2", "7", "3", "4", "⬜", "🔨", "🔵"]} amount="77" maxSize="350"/>
   </>
 )
 
