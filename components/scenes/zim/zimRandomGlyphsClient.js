@@ -12,7 +12,7 @@ const ZimRandomGlyphsClient = ({ glyphsList, amount = 5, zIndex = 2, minSize = 5
       const width = 1024;
       const height = 768;
       const color = clear; // ZIM colors like green, blue, pink, faint, clear, etc.
-      const outerColor = dark; // any HTML colors like "violet", "#333", etc. are fine to use
+      const outerColor = "#dde26a"//dark; // any HTML colors like "violet", "#333", etc. are fine to use
 
       frame = new Frame(scaling, width, height, color, outerColor);
       frame.on("ready", () => { // ES6 Arrow Function - like function(){}
@@ -27,11 +27,15 @@ const ZimRandomGlyphsClient = ({ glyphsList, amount = 5, zIndex = 2, minSize = 5
         for(let i = 0;i < amount;i++) {
           let randomGlyph = glyphsList[Math.floor(Math.random() * glyphsList.length)];
           let neobii = Math.floor(Math.random() * 2);
-          let color = neobii? "white":"black";
-          console.log(color)
+          let colors = ["red", "white", "blue"];
+          let randomColor = Math.floor(Math.random() * colors.length)
+          console.log("hi I'm a random color", randomColor)
+          
+          //let color = neobii? "red":"white";
+          //console.log(color)
           let glyph = new Label({
             text: randomGlyph,
-            color: color
+            color: colors[randomColor]
           });
           glyph.x = Math.floor(Math.random() * stageW);
           glyph.y = Math.floor(Math.random() * stageH);
@@ -39,10 +43,10 @@ const ZimRandomGlyphsClient = ({ glyphsList, amount = 5, zIndex = 2, minSize = 5
           glyph.size = maxSize * Math.random() + (minSize * dampen);
           glyph.rotation = Math.floor(Math.random() * 360);
           stage.addChild(glyph);
-          glyph.wiggle("y", glyph.y, 10, 30, 3, 1);
+          glyph.wiggle("y", glyph.y, 50, 50, .5, 1);
           glyph.drag({slide:true})
           glyph.addEventListener("slidestart", (e) => {glyph.pauseAnimate()})
-          glyph.addEventListener('slidestop', (e) => {glyph.wiggle("y", glyph.y, 5, 5, 3, 1);})
+          glyph.addEventListener('slidestop', (e) => {glyph.wiggle("x", glyph.y, 50, 50, 1, 2);})
         }
       }, 2200)
       didMountRef.current = true;
