@@ -7,9 +7,12 @@ import { useRouter } from 'next/router'
 import AnimatedText from './animatedText/animatedText'
 import ClientOnly from '../components/clientOnly';
 
+
 import { getShowData, getProperData, getFeaturedRoom } from '../lib/getData'
 
 import ProperShell from './proper/shell'
+
+
 
 export default function Layout({ children }) {
   const proper = getProperData();

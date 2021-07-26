@@ -15,6 +15,7 @@ const ZimRandomGlyphsClient = ({ glyphsList, amount = 5, zIndex = 2, minSize = 5
       const outerColor = "#dde26a"//dark; // any HTML colors like "violet", "#333", etc. are fine to use
 
       frame = new Frame(scaling, width, height, color, outerColor);
+      
       frame.on("ready", () => { // ES6 Arrow Function - like function(){}
         frame.canvas.style.zIndex = zIndex;
         const stage = frame.stage;
