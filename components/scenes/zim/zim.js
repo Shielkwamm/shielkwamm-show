@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useEffect } from 'react'
+import Script from 'next/script'
 
 export default function Zim () {
   useEffect(()=> {
@@ -39,6 +40,10 @@ export default function Zim () {
   });
   return (
     <>
+      <Script src="https://www.google-analytics.com/analytics.js" />
+      <script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script>
+      <script src="https://zimjs.org/cdn/cat/04/zim.js"></script>
+      <script src="https://zimjs.org/cdn/pizzazz_01.js"></script>
     </>
   )
 }

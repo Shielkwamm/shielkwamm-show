@@ -69,7 +69,13 @@ float concentricCircles(in vec2 st, in vec2 radius, in float res, in float scale
     float pct = floor(dist*res)/scale;
     return pct;
 }
-
+/*
+void main (void) {
+    vec2 st = gl_FragCoord.xy/resolution.xy;
+    float mdist= distance(vec2(1.0,1.0), mst);
+    gl_FragColor = vec4(vec3(concentricCircles(st, vec2(0.0,0.0), 5.0, 5.0), 5.0, 5.0, 1.0);
+}
+*/
 void main (void) {
     vec2 st = gl_FragCoord.xy/resolution.xy;
     vec2 mst = gl_FragCoord.xy/mouse.xy;
@@ -80,5 +86,5 @@ void main (void) {
   
     st = rotate2D(st,dist/(mdist/5.0)*PI*2.0);
 
-    gl_FragColor = vec4(vec3(concentricCircles(st, vec2(0.0,0.0), 5.0, 5.0),concentricCircles(st, vec2(0.0,0.0), 10.0, 10.0),concentricCircles(st, vec2(0.0,0.0), 20.0, 10.0)),1.0);
+    gl_FragColor = vec4(vec3(concentricCircles(st, vec2(0.0,0.0), 5.0, 5.0),concentricCircles(st, vec2(0.0,1.0), 10.0, 10.0),concentricCircles(st, vec2(sin(time * 5.0),0.0), 20.0, 10.0)),1.0);
 }

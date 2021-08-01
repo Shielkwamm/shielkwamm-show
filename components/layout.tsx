@@ -7,11 +7,10 @@ import { useRouter } from 'next/router'
 import AnimatedText from './animatedText/animatedText'
 import ClientOnly from '../components/clientOnly';
 
-
 import { getShowData, getProperData, getFeaturedRoom } from '../lib/getData'
 
 import ProperShell from './proper/shell'
-
+import Script from 'next/script'
 
 
 export default function Layout({ children }) {
@@ -43,16 +42,15 @@ export default function Layout({ children }) {
           name="description"
           content={show?.meta?.description}
         />
-        <script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script>
-        <script src="https://zimjs.org/cdn/cat/04/zim.js"></script>
-        <script src="https://zimjs.org/cdn/pizzazz_01.js"></script>
-        {/*<script src="https://shielkwamm.s3.us-east-2.amazonaws.com/show/actors/Scoup/Scoup.js" type="text/javascript"></script>   --> */}
-        <script src={proper?.hero?.src} type="text/javascript"></script> 
         <meta property="og:title" content={currentSh}/>
         <meta property="og:description" content={show?.meta?.ogDescription} />
         <meta property="og:image" content={show?.meta?.ogImage}/>
-        
       </Head>
+      <Script src={proper?.hero?.src} type="text/javascript"/> 
+      <Script strategy="beforeInteractive" src="https://zimjs.org/cdn/1.3.4/createjs.js" />
+      <Script strategy="beforeInteractive" src="https://zimjs.org/cdn/cat/04/zim.js" />
+      <Script strategy="beforeInteractive" src="https://zimjs.org/cdn/pizzazz_01.js" />
+      <Script strategy="beforeInteractive" src="https://learneverything.github.io/le-actors/actors/Scoup/Scoup.js" />
       <style jsx global>{`
         body {
           background-image: url(https://i5.walmartimages.com/asr/45377c89-09a9-4c6f-acd0-15118720f060.e8262abba0f18a7bb8b5edb41cb2b5f0.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff);
@@ -60,14 +58,14 @@ export default function Layout({ children }) {
           animation: bgAnimate 1000s linear infinite;
         }`
       }
-      
       </style>
 
-      {proper.shell && show.shellVisible ? (
+      {/* 🥚: Shell */}
+      {proper?.shell && show.shellVisible ? (
         <ProperShell loading={loading} zIndex={3} currentRoom={currentRoom} proper={proper}/>
       ): null}
 
-      {proper.comm && show.heroVisible? (// 5x6
+      {proper?.comm && show.heroVisible? (// 5x6
         <div style={{zIndex: 3, top: "25px"}} className="absolute">
           <Link href="/playback/theScoup/0">
             <div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">
@@ -89,7 +87,7 @@ export default function Layout({ children }) {
       </div>
 
       <ClientOnly>
-      {proper.vibe && show.vibeVisible? (
+      {proper?.vibe && show.vibeVisible? (
         <>
         {!loading? (
       <div style={{zIndex: 3, bottom: 0, left: 0}} className="absolute">
@@ -100,7 +98,7 @@ export default function Layout({ children }) {
       ): null }
       </ClientOnly>
 
-      {proper.ship && show.shipVisible? (
+      {proper?.ship && show.shipVisible? (
         <NavBar/>
       ): null}
       

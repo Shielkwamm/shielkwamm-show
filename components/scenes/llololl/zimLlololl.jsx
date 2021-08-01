@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import Head from 'next/head'
 
+
 const ZimLlololl = () => {
   const didMountRef = useRef(false);
   useEffect(()=> {
@@ -53,10 +54,9 @@ const ZimLlololl = () => {
       clearInterval(interval)
     }*/
   });
-  return null
+  return null;
 }
 
 export default ZimLlololl
 
 //
-//<script src="https://zimjs.org/cdn/physics_2.0.js"></script>
