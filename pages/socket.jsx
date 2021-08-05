@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Script from "next/script"
+import * as Colyseus from "colyseus.js"
 
 export default function Socket() {
 
@@ -58,7 +58,7 @@ export default function Socket() {
 
     // send message to room on submit
     
-    document.querySelector("#form").onsubmit = function(e) {
+    (document.querySelector("#form")).onsubmit = function(e) {
       e.preventDefault();
 
       var input = document.querySelector("#input");
@@ -69,6 +69,7 @@ export default function Socket() {
       room.send("message", input.value);
 
       // clear input
+      
       input.value = "";
   }
 
@@ -97,7 +98,6 @@ export default function Socket() {
   }, [])
   return (
     <>
-    <Script src="https://unpkg.com/colyseus.js@^0.14.13/dist/colyseus.js" strategy="beforeInteractive"/>
     <h1 style={{fontSize: "100px", color: "purple"}} id="fun">Fun!</h1>
 
     <strong>Messages</strong>
