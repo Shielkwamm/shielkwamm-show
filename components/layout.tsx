@@ -1,17 +1,12 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import React, { useEffect } from 'react'
 import NavBar from './navBar'
 import Scene from './scenes/scene'
 import { useRouter } from 'next/router'
-import AnimatedText from './animatedText/animatedText'
-import ClientOnly from '../components/clientOnly';
-
 import { getShowData, getProperData, getFeaturedRoom } from '../lib/getData'
-
-import ProperShell from './proper/shell'
 import Script from 'next/script'
-
+import Hud from './shHud/hud'
+import YTWin from './shUI/ytWin'
 
 export default function Layout({ children }) {
   const proper = getProperData();
@@ -24,10 +19,13 @@ export default function Layout({ children }) {
   const currentSh = ">=== Sh.ielkwamm ===";
 
   const routerProps = useRouter();
+
+
   let zIndex = 2;
   if(routerProps.pathname !== "/") {
     zIndex = 4;
   }
+
   return (
     <>
       <Head>
@@ -51,60 +49,46 @@ export default function Layout({ children }) {
       <Script strategy="beforeInteractive" src="https://zimjs.org/cdn/cat/04/zim.js" />
       <Script strategy="beforeInteractive" src="https://zimjs.org/cdn/pizzazz_01.js" />
       <Script strategy="beforeInteractive" src="https://learneverything.github.io/le-actors/actors/Scoup/Scoup.js" />
+      
       <style jsx global>{`
         body {
           background-image: url(https://i5.walmartimages.com/asr/45377c89-09a9-4c6f-acd0-15118720f060.e8262abba0f18a7bb8b5edb41cb2b5f0.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff);
           background-position-x: 0;
           animation: bgAnimate 1000s linear infinite;
+          position:absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
         }`
       }
       </style>
-
-      {/* 🥚: Shell */}
-      {proper?.shell && show.shellVisible ? (
-        <ProperShell loading={loading} zIndex={3} currentRoom={currentRoom} proper={proper}/>
-      ): null}
-
-      {proper?.comm && show.heroVisible? (// 5x6
-        <div style={{zIndex: 3, top: "25px"}} className="absolute">
-          <Link href="/playback/theScoup/0">
-            <div style={{fontSize: "45px", width: "45px", cursor: "grab"}} className="">
-            <AnimatedText text="[ {🍦} ], [{{🍦}}], [  🍦  ]" />
-            </div>
-          </Link>
-        </div>
-      ): null}
-
-
+      <div id="desktop" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%"}}>
+      
       <div style={{zIndex: 1}} className="absolute inset-0">
         <Scene/>
       </div>
-
-
+      
 
       <div style={{zIndex: zIndex, height: "100%", width: "calc(100% - 55px)"}} className="absolute inset-0">
         {children}
       </div>
 
-      <ClientOnly>
-      {proper?.vibe && show.vibeVisible? (
-        <>
-        {!loading? (
-      <div style={{zIndex: 3, bottom: 0, left: 0}} className="absolute">
-        <Link href="/player"><div className="cursor-pointer">{currentRoom?.vibe} {currentRoom?.currentMusicTitle}</div></Link>
-      </div>
-        ): null}
-        </>
-      ): null }
-      </ClientOnly>
-
       {proper?.ship && show.shipVisible? (
         <NavBar/>
       ): null}
-      
+
+      {loading? (
+      <Hud proper={proper} show={show} currentRoom={currentRoom}/>
+      ): null}
+
+      <YTWin />
+      </div>
     </>
   )
 }
+
+
 
 //https://i5.walmartimages.com/asr/45377c89-09a9-4c6f-acd0-15118720f060.e8262abba0f18a7bb8b5edb41cb2b5f0.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff
 //<-- background-image: url(${show.style.backgroundImage}); -->

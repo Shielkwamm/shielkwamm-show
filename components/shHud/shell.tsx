@@ -1,13 +1,12 @@
 import ClientOnly from '../clientOnly';
 
-const ProperShell = ({loading, currentRoom, zIndex, proper}) => (
+const Shell = ({currentRoom, zIndex, proper}) => (
   
   <ClientOnly>
-    {loading ? (
     <div style={{zIndex: zIndex}} className="absolute px-2 text-purple-800">
       <div><a href={`${proper.shellRoot}/room/${currentRoom?.slug}`}>&#35;{currentRoom?.name}</a></div>
-    </div> ) : null }
+    </div>
   </ClientOnly>
 )
 
-export default ProperShell;
+export default Shell;
