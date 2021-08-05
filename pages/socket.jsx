@@ -12,7 +12,7 @@ export default function Socket() {
     var host = window.document.location.host.replace(/:.*/, '');
   var port = 2567;
   var clientAddress = location.protocol.replace("http", "ws") + "//" + host + (port ? ':'+ port : '');
-  var remoteAddress = "ws://socket-st.herokuapp.com"
+  var remoteAddress = "wss://socket-st.herokuapp.com"
   var client = new Colyseus.Client(remoteAddress);
 
   client.joinOrCreate("my_room").then(room => {
