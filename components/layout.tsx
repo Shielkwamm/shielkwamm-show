@@ -44,7 +44,7 @@ export default function Layout({ children }) {
         <meta property="og:description" content={show?.meta?.ogDescription} />
         <meta property="og:image" content={show?.meta?.ogImage}/>
       </Head>
-      <Script src={proper?.hero?.src} type="text/javascript"/> 
+      <Script strategy="beforeInteractive" src={proper?.hero?.src} type="text/javascript"/> 
       <Script strategy="beforeInteractive" src="https://zimjs.org/cdn/1.3.4/createjs.js" />
       <Script strategy="beforeInteractive" src="https://zimjs.org/cdn/cat/04/zim.js" />
       <Script strategy="beforeInteractive" src="https://zimjs.org/cdn/pizzazz_01.js" />
@@ -52,7 +52,6 @@ export default function Layout({ children }) {
       
       <style jsx global>{`
         body {
-          background-image: url(https://i5.walmartimages.com/asr/45377c89-09a9-4c6f-acd0-15118720f060.e8262abba0f18a7bb8b5edb41cb2b5f0.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff);
           background-position-x: 0;
           animation: bgAnimate 1000s linear infinite;
           position:absolute;
