@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import * as Colyseus from "colyseus.js"
+import React from 'react'
+import YTWin from '../components/shUI/ytWin'
 
 export default function Socket() {
-
+  //const title = React.createElement('h1', {}, 'My First React Code');
+  //console.log(title)
   const [message, setMessage] = useState("toot")
 
   useEffect(()=> {
@@ -37,6 +40,7 @@ export default function Socket() {
         document.querySelector("#fun").style.top = player.y + "px";
         document.querySelector("#fun").style.left = player.x + "px";
         document.querySelector("#fun").style.transform = "rotate3d(1, 1, 1, " + player.x + "deg)"
+        document.querySelector("#fun2").style.transform = "rotate3d(1, 1, 1, " + player.y + "deg)"
       }
 
       /*players[sessionId] = dom;
@@ -98,8 +102,9 @@ export default function Socket() {
   }, [])
   return (
     <>
-    <h1 style={{fontSize: "100px", color: "purple"}} id="fun">Fun!</h1>
-
+    <YTWin title="socket">
+    <h1 style={{fontSize: "100px", color: "purple"}} id="fun">💋 Fun!</h1>
+    <h2 style={{fontSize: "80px", color: "blue"}} id="fun2">💋 Chat!</h2>
     <strong>Messages</strong>
     
     <br/>
@@ -110,7 +115,7 @@ export default function Socket() {
     </form>
 
     <div id="messages"></div>
-    
+    </YTWin>
     </>
   )
 }

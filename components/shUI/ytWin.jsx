@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
 import Script from 'next/script'
+import React from 'react';
+import ReactDOMServer from 'react-dom/server'
 
-const YTWin = () => {
+const YTWin = ({ children, title }) => {
   useEffect(() => {
     new WinBox({ 
       id: "my-window",
     root: document.body,
-    title: "All Options",
     border: 4,
     width: 200,
     height: 200,
@@ -18,7 +19,8 @@ const YTWin = () => {
     right: 50,
     bottom: 0,
     left: 50,
-    html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/tN12Tg5ttpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    html: ReactDOMServer.renderToStaticMarkup(children),
+    title: title
     });
   }, [])
   return (
