@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-text-plane"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
       
@@ -11,7 +12,13 @@
         type="pattern" 
         preset="custom"
       >
-      <a-text-plane text="hello World💋" rotation="-90 0 0"></a-text-plane>
+      <a-entity 
+        text-plane="text: hello World💋"
+        rotation="-90 0 0"
+        position="0 0 0"
+      />
+      <a-sphere color="yellow" radius="25"></a-sphere>
+      <a-text value="Hello, World!"></a-text>
         
       </a-marker>
       <a-entity camera></a-entity>
@@ -34,4 +41,9 @@
         ></a-mixin>
 
         mixin="msdf-text"
+        <a-entity 
+        text-plane="text: hello World💋"
+        rotation="-90 0 0"
+        position="0 0 0"
+      />
 -->
