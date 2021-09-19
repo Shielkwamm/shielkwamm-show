@@ -25,7 +25,7 @@ export default function Layout({ children }) {
   if(routerProps.pathname !== "/") {
     zIndex = 4;
   }
-
+  console.log(proper, show, data)
   return (
     <>
       <Head>
@@ -73,16 +73,16 @@ export default function Layout({ children }) {
         {children}
       </div>
 
-      {proper?.ship && show.shipVisible? (
+      {proper?.organization && show.shipVisible? (
         <NavBar/>
       ): null}
 
-      {loading? (
-      <Hud proper={proper} show={show} currentRoom={currentRoom}/>
+      {!loading? (
+        <Hud proper={proper} show={show} currentRoom={currentRoom}/>
       ): null}
 
-      <YTWin title={"organizedChaos"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/tN12Tg5ttpk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <YTWin title={"💩"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/pcx-_rNT5EY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
       </div>
     </>
