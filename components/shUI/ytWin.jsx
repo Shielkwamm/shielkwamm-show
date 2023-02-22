@@ -11,14 +11,10 @@ const YTWin = ({ children, title }) => {
     border: 4,
     width: 200,
     height: 200,
-    x: "center",
-    y: "center",
     max: false,
     splitscreen: true,
-    top: 50,
-    right: 50,
-    bottom: 0,
-    left: 50,
+    top: 300,
+    right: 250,
     html: ReactDOMServer.renderToStaticMarkup(children),
     title: title
     });
