@@ -65,7 +65,7 @@ export default function Layout({ children }) {
       <div id="desktop" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%"}}>
       
       <div style={{zIndex: 1}} className="absolute inset-0">
-        <Scene/>
+        
       </div>
       
 
@@ -81,8 +81,8 @@ export default function Layout({ children }) {
         <Hud proper={proper} show={show} currentRoom={currentRoom}/>
       ): null}
 
-      <YTWin title={"💩"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/pcx-_rNT5EY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <YTWin title={"{👍+"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/TqeGZpHCURo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
       </div>
     </>
@@ -90,6 +90,6 @@ export default function Layout({ children }) {
 }
 
 
-
+//<Scene/>
 //https://i5.walmartimages.com/asr/45377c89-09a9-4c6f-acd0-15118720f060.e8262abba0f18a7bb8b5edb41cb2b5f0.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff
 //<-- background-image: url(${show.style.backgroundImage}); -->
