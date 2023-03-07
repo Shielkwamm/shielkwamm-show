@@ -6,7 +6,7 @@ import Ship from './ship/ship';
 
 const Scene = () => (
   <>
-    <Ship/>
+    <Ship label="my ship?"/>
   </>
 )
 
