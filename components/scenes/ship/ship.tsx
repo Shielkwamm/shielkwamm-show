@@ -6,7 +6,7 @@ const ShipNoSSR = dynamic(
   { ssr: false }
 )
 //<ShipNoSSR />
-const Ship = ({ label }) => (
+const Ship = ({ }) => (
   <>
     <Head>
       <script src="https://shielkwamm.s3.us-east-2.amazonaws.com/show/Ship/Ship.js" type="text/javascript"></script>

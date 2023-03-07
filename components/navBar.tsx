@@ -19,7 +19,8 @@ const NavBar = () => {
         <div className="flex-none grid grid-col-1 space-y-4">
           <a href="https://acktueli.com">💻</a>
           <a href="https://u-n.herokuapp.com/organization/linkage/Shielkwamm">🎉</a>
-          <a href="https://github.com/InformationAsymmetry">&#123;👆&#125;</a>
+          <a href="https://github.com/InformationAsymmetry">&#123;👔&#125;</a>
+          <a href="https://github.com/PersonGraph">⬆️</a>
         </div>
         
       </div>

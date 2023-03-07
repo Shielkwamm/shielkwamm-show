@@ -3,6 +3,7 @@ const ShipBottomNav = () => (
     <a href="https://acktueli.com">acktueli</a>
     <a href="https://u-n.herokuapp.com/organization/linkage/Shielkwamm">u-n</a>
     <a href="https://github.com/InformationAsymmetry">InformationAsymmetry</a>
+    <a href="https://github.com/PersonGraph">PersonGraph</a>
   </div>
 )
 
