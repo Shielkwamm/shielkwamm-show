@@ -81,8 +81,11 @@ export default function Layout({ children }) {
         <Hud proper={proper} show={show} currentRoom={currentRoom}/>
       ): null}
 
-      <YTWin title={"...🤞+"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/IwAIwRrs6xs" title="Nose" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <YTWin id="jun" title={"🤞"}>
+      <iframe width="500" height="355" src="https://www.youtube.com/embed/cLzXSpMhFx4" title="Jun" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+      <YTWin id="betty" title={"🤞"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/yXmnmvDl-ao" title="Betty" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
       </div>
     </>
