@@ -80,11 +80,8 @@ export default function Layout({ children }) {
       {!loading? (
         <Hud proper={proper} show={show} currentRoom={currentRoom}/>
       ): null}
-      <YTWin title={"o🤞o"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/yXmnmvDl-ao" title="Betty" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
-      </YTWin>
-      <YTWin title={"{🤞}"}>
-      <iframe width="500" height="355" src="https://www.youtube.com/embed/cLzXSpMhFx4" title="Jun" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <YTWin title={"🧶"}>
+      <iframe width="560" height="315" src="https://youtu.be/bFOPwL32UvI?si=o6Az-HjehV9CaO2x" title="MC Frontalot - Stoop Sale" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
       </div>
     </>
