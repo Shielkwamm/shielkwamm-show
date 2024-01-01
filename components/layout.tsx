@@ -81,7 +81,7 @@ export default function Layout({ children }) {
         <Hud proper={proper} show={show} currentRoom={currentRoom}/>
       ): null}
       <YTWin title={"🧶"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/bFOPwL32UvI?si=09zOGgjxiRd5eYzl" title="MC Frontalot - Stoop Sale [OFFICIAL VIDEO]" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/glr878X82PE?si=BVoxVDGBPBzfdoai" title="Faith No More - Motherfucker (Official Audio)" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
       </div>
     </>
