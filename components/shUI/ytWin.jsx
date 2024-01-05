@@ -3,7 +3,7 @@ import Script from 'next/script'
 import React from 'react';
 import ReactDOMServer from 'react-dom/server'
 
-const YTWin = ({ children, title }) => {
+const YTWin = ({ children, title, x, y, hidden }) => {
   useEffect(() => {
     new WinBox({ 
     root: document.body,
@@ -12,10 +12,9 @@ const YTWin = ({ children, title }) => {
     height: 200,
     max: false,
     splitscreen: true,
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
+    x: x,
+    y: y,
+    hidden: hidden,
     html: ReactDOMServer.renderToStaticMarkup(children),
     title: title
     });
