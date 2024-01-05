@@ -81,6 +81,9 @@ export default function Layout({ children }) {
       {!loading? (
         <Hud proper={proper} show={show} currentRoom={currentRoom}/>
       ): null}
+        <YTWin title={"Bison instead of Bears"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/tJ0fHAHihPA?si=3nWIKcY3i9i7zq-H" title="Bison Water Hole - Grasslands National Park powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
       <YTWin title={"Oryx"}>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/ydYDqZQpim8?si=Vs_YlM4Xlkzpn38W" title="Namibia: Live stream in the Namib Desert" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
@@ -95,6 +98,12 @@ export default function Layout({ children }) {
       </YTWin>
         <YTWin title={"Hummingbirds from LA"}>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/pXe8MpU7uzk?si=suvNku04a-NEcCr6" title="Live Hummingbird Feeder Cam, Bird Feeder, Studio City, California" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+        <YTWin title={"Olifants"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/_NXaovxB-Bk?si=CV16Bv9QUarp8Jr3" title="Africam Olifants River powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+      <YTWin title={"Hippopotamus"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/KyQAB-TKOVA?si=QPWRNKNLHWvESGCT" title="African Watering Hole powered by Explore.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
       <YTWin title={"Gorillas"}>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/yfSyjwY6zSQ?si=nEBI76e5q8cQ66hm" title="GRACE Gorilla Forest Corridor Cam powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
