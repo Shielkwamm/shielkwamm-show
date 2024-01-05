@@ -65,6 +65,7 @@ export default function Layout({ children }) {
       <div id="desktop" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%"}}>
       
       <div style={{zIndex: 1}} className="absolute inset-0">
+        <h1>‾🦍‾</h1>
         <Scene/>
       </div>
       
@@ -80,16 +81,34 @@ export default function Layout({ children }) {
       {!loading? (
         <Hud proper={proper} show={show} currentRoom={currentRoom}/>
       ): null}
-      <YTWin title={"🌍"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/ydYDqZQpim8?si=Vs_YlM4Xlkzpn38W" title="Namibia: Live stream in the Namib Desert
-" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <YTWin title={"Oryx"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ydYDqZQpim8?si=Vs_YlM4Xlkzpn38W" title="Namibia: Live stream in the Namib Desert" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+      <YTWin title={"Sea Manatees"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/yPSYdCWRWFA?si=8cicT4mb267PZK2v" title="Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+        <YTWin title={"Peregrine Falcons"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/qzMJliQwMNc?si=HplAF_ArzXvG1ivU" title="Box Camera - FalconCam Project LIVE" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+        <YTWin title={"Orcas"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/-vK6dVJ7erU?si=EbxK1COtLb5IBJ0k" title="Strider Rubbing Beach - Underwater powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+        <YTWin title={"Hummingbirds from LA"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/pXe8MpU7uzk?si=suvNku04a-NEcCr6" title="Live Hummingbird Feeder Cam, Bird Feeder, Studio City, California" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+      <YTWin title={"Gorillas"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/yfSyjwY6zSQ?si=nEBI76e5q8cQ66hm" title="GRACE Gorilla Forest Corridor Cam powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+        <YTWin title={"Animal Families Elephants"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/DsNtwGJXTTs?si=nLxJ9eTfqTf9ax-F" title="Africam Tau powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+        <YTWin title={"Animal Families Lions"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/dIChLG4_WNs?si=Bc_0fyJNxx1SKE1h" title="Africam Nkorho Bush Lodge powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
       </div>
     </>
   )
 }
-
-
 //
 //https://i5.walmartimages.com/asr/45377c89-09a9-4c6f-acd0-15118720f060.e8262abba0f18a7bb8b5edb41cb2b5f0.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff
 //<-- background-image: url(${show.style.backgroundImage}); -->
