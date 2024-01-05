@@ -6,7 +6,6 @@ import ReactDOMServer from 'react-dom/server'
 const YTWin = ({ children, title }) => {
   useEffect(() => {
     new WinBox({ 
-      id: "my-window",
     root: document.body,
     border: 4,
     width: 200,
@@ -24,7 +23,7 @@ const YTWin = ({ children, title }) => {
     });
   }, [])
   return (
-    <Script strategy="beforeInteractive" src="https://rawcdn.githack.com/nextapps-de/winbox/0.2.0/dist/winbox.bundle.js" />
+    <Script strategy="beforeInteractive" src="https://rawcdn.githack.com/nextapps-de/winbox/0.2.82/dist/winbox.bundle.min.js" />
   )
 }
 
