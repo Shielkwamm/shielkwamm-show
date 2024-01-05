@@ -80,8 +80,9 @@ export default function Layout({ children }) {
       {!loading? (
         <Hud proper={proper} show={show} currentRoom={currentRoom}/>
       ): null}
-      <YTWin title={"🧶"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/glr878X82PE?si=BVoxVDGBPBzfdoai" title="Faith No More - Motherfucker (Official Audio)" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <YTWin title={"🌍"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ydYDqZQpim8?si=Vs_YlM4Xlkzpn38W" title="Namibia: Live stream in the Namib Desert
+" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
       </div>
     </>
