@@ -10,8 +10,6 @@ const YTWin = ({ children, title }) => {
     border: 4,
     width: 200,
     height: 200,
-    x: "center",
-    y: "center",
     max: false,
     splitscreen: true,
     top: 0,
