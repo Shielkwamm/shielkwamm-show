@@ -84,6 +84,10 @@ export default function Layout({ children }) {
         <YTWin title={"Bison instead of Bears"} hidden={false} x={"bottom"} y={"left"} >
       <iframe width="560" height="315" src="https://www.youtube.com/embed/tJ0fHAHihPA?si=3nWIKcY3i9i7zq-H" title="Bison Water Hole - Grasslands National Park powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
+        <YTWin title={"}?o📖)?-.. ++?  The Stars and Stripes Forever"} hidden={false} x={"center"} y={"center"}>
+      <iframe width="777" height="777" src="https://www.youtube.com/embed/a-7XWhyvIpE?si=6ktx6x-oxuMiWNJx" title={"SOUSA The Stars and Stripes Forever - \"The President's Own\" U.S. Marine Band
+"} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
       <YTWin title={"Oryx"} hidden={false} x={"center"} y={"center"}>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/ydYDqZQpim8?si=Vs_YlM4Xlkzpn38W" title="Namibia: Live stream in the Namib Desert" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
@@ -105,15 +109,7 @@ export default function Layout({ children }) {
       <YTWin title={"Hippopotamus"} hidden={false} x={"bottom"} y={"right"}>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/KyQAB-TKOVA?si=QPWRNKNLHWvESGCT" title="African Watering Hole powered by Explore.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
-      <YTWin title={"Gorillas"} hidden={false} x={"center"} y={"center"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/yfSyjwY6zSQ?si=nEBI76e5q8cQ66hm" title="GRACE Gorilla Forest Corridor Cam powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
-      </YTWin>
-        <YTWin title={"Animal Families Elephants"} hidden={true} x={"center"} y={"center"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/DsNtwGJXTTs?si=nLxJ9eTfqTf9ax-F" title="Africam Tau powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
-      </YTWin>
-        <YTWin title={"Animal Families Lions"} hidden={true} x={"center"} y={"center"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/dIChLG4_WNs?si=Bc_0fyJNxx1SKE1h" title="Africam Nkorho Bush Lodge powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
-      </YTWin>
+        
       </div>
     </>
   )
@@ -121,3 +117,15 @@ export default function Layout({ children }) {
 //
 //https://i5.walmartimages.com/asr/45377c89-09a9-4c6f-acd0-15118720f060.e8262abba0f18a7bb8b5edb41cb2b5f0.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff
 //<-- background-image: url(${show.style.backgroundImage}); -->
+/*
+<YTWin title={"Gorillas"} hidden={false} x={"center"} y={"center"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/yfSyjwY6zSQ?si=nEBI76e5q8cQ66hm" title="GRACE Gorilla Forest Corridor Cam powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+<YTWin title={"Animal Families Elephants"} hidden={true} x={"center"} y={"center"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/DsNtwGJXTTs?si=nLxJ9eTfqTf9ax-F" title="Africam Tau powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+        <YTWin title={"Animal Families Lions"} hidden={true} x={"center"} y={"center"}>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/dIChLG4_WNs?si=Bc_0fyJNxx1SKE1h" title="Africam Nkorho Bush Lodge powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      </YTWin>
+
+*/
