@@ -82,32 +82,31 @@ export default function Layout({ children }) {
         <Hud proper={proper} show={show} currentRoom={currentRoom}/>
       ): null}
         <YTWin title={"Bison instead of Bears"} hidden={false} x={"bottom"} y={"left"} >
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/tJ0fHAHihPA?si=3nWIKcY3i9i7zq-H" title="Bison Water Hole - Grasslands National Park powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/tJ0fHAHihPA?si=3nWIKcY3i9i7zq-H" title="Bison Water Hole - Grasslands National Park powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </YTWin>
         <YTWin title={"}?o📖)?-.. ++?  The Stars and Stripes Forever"} hidden={false} x={"center"} y={"center"}>
-      <iframe width="777" height="777" src="https://www.youtube.com/embed/a-7XWhyvIpE?si=6ktx6x-oxuMiWNJx" title={"SOUSA The Stars and Stripes Forever - \"The President's Own\" U.S. Marine Band
-"} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <iframe width="777" height="777" src="https://www.youtube.com/embed/a-7XWhyvIpE?si=6ktx6x-oxuMiWNJx" title={"SOUSA The Stars and Stripes Forever - \"The President's Own\" U.S. Marine Band"} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </YTWin>
       <YTWin title={"Oryx"} hidden={false} x={"center"} y={"center"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/ydYDqZQpim8?si=Vs_YlM4Xlkzpn38W" title="Namibia: Live stream in the Namib Desert" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ydYDqZQpim8?si=Vs_YlM4Xlkzpn38W" title="Namibia: Live stream in the Namib Desert" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </YTWin>
       <YTWin title={"Sea Manatees"} hidden={false} x={"top"} y={"left"} >
       <iframe width="560" height="315" src="https://www.youtube.com/embed/yPSYdCWRWFA?si=8cicT4mb267PZK2v" title="Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
       </YTWin>
         <YTWin title={"Peregrine Falcons"} hidden={true} x={"center"} y={"center"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/qzMJliQwMNc?si=HplAF_ArzXvG1ivU" title="Box Camera - FalconCam Project LIVE" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/qzMJliQwMNc?si=HplAF_ArzXvG1ivU" title="Box Camera - FalconCam Project LIVE" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </YTWin>
         <YTWin title={"Orcas"} hidden={true} x={"center"} y={"center"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/-vK6dVJ7erU?si=EbxK1COtLb5IBJ0k" title="Strider Rubbing Beach - Underwater powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/-vK6dVJ7erU?si=EbxK1COtLb5IBJ0k" title="Strider Rubbing Beach - Underwater powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </YTWin>
         <YTWin title={"Hummingbirds from LA"} hidden={false} x={"center"} y={"center"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/pXe8MpU7uzk?si=suvNku04a-NEcCr6" title="Live Hummingbird Feeder Cam, Bird Feeder, Studio City, California" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/pXe8MpU7uzk?si=suvNku04a-NEcCr6" title="Live Hummingbird Feeder Cam, Bird Feeder, Studio City, California" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </YTWin>
         <YTWin title={"Olifants"} hidden={false} x={"top"} y={"right"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/_NXaovxB-Bk?si=CV16Bv9QUarp8Jr3" title="Africam Olifants River powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/_NXaovxB-Bk?si=CV16Bv9QUarp8Jr3" title="Africam Olifants River powered by EXPLORE.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </YTWin>
       <YTWin title={"Hippopotamus"} hidden={false} x={"bottom"} y={"right"}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/KyQAB-TKOVA?si=QPWRNKNLHWvESGCT" title="African Watering Hole powered by Explore.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>'
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/KyQAB-TKOVA?si=QPWRNKNLHWvESGCT" title="African Watering Hole powered by Explore.org" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </YTWin>
         
       </div>
