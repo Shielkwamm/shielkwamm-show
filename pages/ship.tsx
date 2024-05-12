@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import ShipStatus from '../components/ship/status'
 
-const ship = "( { ship } )";
+const ship = "ꓘꓘ| ships |kk";
 //I just like this title
 //<title>△^best</title>
 
